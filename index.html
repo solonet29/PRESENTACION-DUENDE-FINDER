@@ -154,7 +154,6 @@
         footer a:hover {
             text-decoration: underline;
         }
-
         .live-demo-section {
             background-color: #ffffff;
         }
@@ -190,7 +189,6 @@
             height: 100%; 
             border: none;
         }
-        
         .ai-examples-section {
             background-color: #ffffff;
         }
@@ -215,7 +213,6 @@
             margin-top: 0;
             margin-bottom: 10px;
         }
-        
         .impact-section {
             background-color: #e0e0e0;
         }
@@ -238,7 +235,6 @@
             font-size: 1.2rem;
             margin-bottom: 5px;
         }
-        
         .comparison-box,
         .example-card,
         .feature-item,
@@ -379,12 +375,98 @@
         .pagination-dot.active {
             background-color: #3DDC84;
         }
-        
         .mobile-only-button {
             display: none;
             margin-top: 20px;
         }
-
+        .strategic-alliance-section {
+            background-color: #18181b;
+            color: #f4f4f5;
+        }
+        .strategic-alliance-section h2 {
+            color: #3DDC84;
+        }
+        .strategic-alliance-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+        .value-prop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            text-align: left;
+            margin-bottom: 60px;
+        }
+        .value-prop-card {
+            background-color: #27272a;
+            padding: 30px;
+            border-radius: 8px;
+            border-top: 4px solid #3DDC84;
+        }
+        .value-prop-card i {
+            font-size: 2.5rem;
+            color: #3DDC84;
+            margin-bottom: 15px;
+        }
+        .value-prop-card h4 {
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .collaboration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+        .collaboration-card {
+            background-color: #ffffff;
+            color: #18181b;
+            border-radius: 8px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+        .collaboration-card h4 {
+            font-size: 1.5rem;
+            color: #16a34a;
+            margin-top: 0;
+        }
+        .collaboration-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            flex-grow: 1;
+        }
+        .collaboration-card ul li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        .collaboration-card ul li::before {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            content: "\f00c";
+            color: #16a34a;
+            position: absolute;
+            left: 0;
+        }
+        @media (min-width: 769px) {
+            .impact-step:not(:last-child)::after {
+                content: '\f061';
+                font-family: "Font Awesome 6 Free";
+                font-weight: 900;
+                position: absolute;
+                top: 30%;
+                right: -25px;
+                transform: translateY(-50%);
+                font-size: 1.5rem;
+                color: #52525b;
+            }
+        }
         @media (max-width: 768px) {
             .impact-grid {
                 gap: 50px;
@@ -398,8 +480,6 @@
             .mobile-only-button {
                 display: inline-block;
             }
-            
-            /* --- CSS para transformar la tabla en tarjetas en móvil --- */
             .competitor-table thead {
                 display: none;
             }
@@ -681,6 +761,66 @@
         </div>
     </section>
 
+    <section id="alianza-estrategica" class="strategic-alliance-section">
+        <div class="container">
+            <h2>Una Alianza Estratégica para el Turismo y la Cultura</h2>
+            <p style="max-width: 700px; margin: 0 auto 50px auto;">
+                Duende Finder no es solo una herramienta para el turista; es un potente aliado para las instituciones públicas. Nuestra plataforma ofrece soluciones directas a los retos de la promoción turística en la era digital, generando un impacto medible y positivo en la economía y la cultura de Andalucía.
+            </p>
+
+            <h3>Nuestro Valor Añadido para la Gestión Pública</h3>
+            <div class="value-prop-grid">
+                <div class="value-prop-card">
+                    <i class="fas fa-chart-pie"></i>
+                    <h4>Dashboard de Inteligencia Turística</h4>
+                    <p>Acceda a datos anónimos y agregados para tomar decisiones estratégicas. Identifique qué artistas, palos o ciudades generan más interés, anticipe la demanda y optimice sus campañas de promoción basándose en información real y actualizada.</p>
+                </div>
+                <div class="value-prop-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h4>Promoción de Destinos y Eventos</h4>
+                    <p>Utilice Duende Finder como un canal directo para promocionar festivales provinciales, rutas culturales o destinos menos conocidos. Destaque sus eventos patrocinados ante una audiencia segmentada y altamente interesada en la cultura flamenca.</p>
+                </div>
+                <div class="value-prop-card">
+                    <i class="fas fa-cloud-arrow-up"></i>
+                    <h4>Digitalización del Patrimonio</h4>
+                    <p>Colabore con nosotros para reforzar la imagen de Andalucía como una potencia cultural innovadora. Nuestra plataforma moderniza el acceso al flamenco, preservando su autenticidad y conectándolo con las nuevas generaciones de viajeros digitales.</p>
+                </div>
+                <div class="value-prop-card">
+                    <i class="fas fa-store"></i>
+                    <h4>Impulso Directo a la Economía</h4>
+                    <p>Cada recomendación de nuestra IA (restaurantes, comercios, tablaos) se traduce en un consumo directo en el tejido empresarial local. Fomente un turismo sostenible que distribuye el beneficio económico por todo el territorio.</p>
+                </div>
+            </div>
+
+            <h3>Modelos de Colaboración</h3>
+            <div class="collaboration-grid">
+                <div class="collaboration-card">
+                    <h4>Patrocinio Provincial / Regional</h4>
+                    <p>Convierta a su Diputación o Consejería en el socio principal de Duende Finder en su territorio.</p>
+                    <ul>
+                        <li>Branding exclusivo en la app para su provincia/región.</li>
+                        <li>Posicionamiento prioritario de sus eventos y rutas.</li>
+                        <li>Acceso a informes trimestrales de inteligencia turística.</li>
+                        <li>Campañas conjuntas en redes sociales.</li>
+                    </ul>
+                    <a href="mailto:hola@solonet.es?subject=Informaci%C3%B3n%20sobre%20Patrocinio%20Provincial" class="cta-button">Más Información</a>
+                </div>
+                 <div class="collaboration-card">
+                    <h4>Convenio para Eventos Específicos</h4>
+                    <p>Potencie el alcance de sus grandes eventos y festivales (Bienal, Festival de Jerez, etc.).</p>
+                    <ul>
+                        <li>Sección dedicada al evento dentro de la app.</li>
+                        <li>Notificaciones push a los usuarios cercanos.</li>
+                        <li>Integración del programa oficial y venta de entradas.</li>
+                        <li>Menciones como "Evento Recomendado" por la IA.</li>
+                    </ul>
+                    <a href="mailto:hola@solonet.es?subject=Informaci%C3%B3n%20sobre%20Convenio%20para%20Eventos" class="cta-button">Más Información</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <section id="piloto" class="pilot-section">
         <div class="container">
             <h2>Colaboremos: El Proyecto Piloto</h2>
@@ -697,149 +837,127 @@
     </footer>
 
     <script>
-/*
-===================================================================
- CORRECCIÓN DEFINITIVA: Script del slider mejorado y más robusto
-===================================================================
-*/
-document.addEventListener('DOMContentLoaded', () => {
-    
-    const sliderContainer = document.querySelector('.slider-container');
-    if (!sliderContainer) return; // Si no existe el slider, no hacer nada.
+        document.addEventListener('DOMContentLoaded', () => {
+            const sliderContainer = document.querySelector('.slider-container');
+            if (!sliderContainer) return;
 
-    const track = sliderContainer.querySelector('.slider-track');
-    const slides = Array.from(track.children);
-    const pagination = sliderContainer.querySelector('.slider-pagination');
-    const sliderViewport = sliderContainer.querySelector('.slider-viewport');
-    
-    // Salir si faltan elementos esenciales o no hay tarjetas
-    if (!track || !slides.length || !pagination || !sliderViewport) return;
+            const track = sliderContainer.querySelector('.slider-track');
+            const slides = Array.from(track.children);
+            const pagination = sliderContainer.querySelector('.slider-pagination');
+            const sliderViewport = sliderContainer.querySelector('.slider-viewport');
+            
+            if (!track || !slides.length || !pagination || !sliderViewport) return;
 
-    let currentIndex = 0;
-    let slideWidth = 0; // Se calculará después
-    
-    // Variables para el arrastre
-    let isDragging = false;
-    let startPos = 0;
-    let currentTranslate = 0;
-    let prevTranslate = 0;
-    
-    function initializeSlider() {
-        // 1. Calcular el ancho correcto
-        updateSlideWidth();
-        
-        // 2. Crear los puntos de paginación
-        createPagination();
-        
-        // 3. Añadir los event listeners
-        addEventListeners();
+            let currentIndex = 0;
+            let slideWidth = 0;
+            
+            let isDragging = false;
+            let startPos = 0;
+            let currentTranslate = 0;
+            let prevTranslate = 0;
+            
+            function initializeSlider() {
+                updateSlideWidth();
+                createPagination();
+                addEventListeners();
+                goToSlide(0);
+            }
 
-        // 4. Posicionar el slider en el estado inicial
-        goToSlide(0);
-    }
+            function updateSlideWidth() {
+                slideWidth = sliderViewport.getBoundingClientRect().width;
+            }
 
-    function updateSlideWidth() {
-        // Se recalcula el ancho del viewport (el contenedor visible)
-        slideWidth = sliderViewport.getBoundingClientRect().width;
-    }
+            function createPagination() {
+                pagination.innerHTML = '';
+                slides.forEach((_, index) => {
+                    const dot = document.createElement('div');
+                    dot.classList.add('pagination-dot');
+                    dot.addEventListener('click', () => {
+                        goToSlide(index);
+                    });
+                    pagination.appendChild(dot);
+                });
+                updateActiveDot();
+            }
 
-    function createPagination() {
-        pagination.innerHTML = ''; // Limpiar puntos existentes
-        slides.forEach((_, index) => {
-            const dot = document.createElement('div');
-            dot.classList.add('pagination-dot');
-            dot.addEventListener('click', () => {
-                goToSlide(index);
-            });
-            pagination.appendChild(dot);
+            function addEventListeners() {
+                sliderViewport.addEventListener('mousedown', dragStart);
+                sliderViewport.addEventListener('touchstart', dragStart, { passive: true });
+                sliderViewport.addEventListener('mouseup', dragEnd);
+                sliderViewport.addEventListener('mouseleave', dragEnd);
+                sliderViewport.addEventListener('touchend', dragEnd);
+                sliderViewport.addEventListener('mousemove', drag);
+                sliderViewport.addEventListener('touchmove', drag, { passive: true });
+                window.addEventListener('resize', onResize);
+            }
+            
+            function onResize() {
+                updateSlideWidth();
+                track.style.transition = 'none';
+                goToSlide(currentIndex);
+                setTimeout(() => {
+                    track.style.transition = 'transform 0.4s ease-out';
+                }, 50);
+            }
+
+            function dragStart(event) {
+                isDragging = true;
+                startPos = getPositionX(event);
+                sliderViewport.classList.add('grabbing');
+                track.style.transition = 'none';
+            }
+
+            function drag(event) {
+                if (isDragging) {
+                    const currentPosition = getPositionX(event);
+                    currentTranslate = prevTranslate + currentPosition - startPos;
+                    setSliderPosition();
+                }
+            }
+
+            function dragEnd() {
+                if (!isDragging) return;
+                isDragging = false;
+                const movedBy = currentTranslate - prevTranslate;
+                
+                if (movedBy < -50 && currentIndex < slides.length - 1) {
+                    currentIndex += 1;
+                }
+                if (movedBy > 50 && currentIndex > 0) {
+                    currentIndex -= 1;
+                }
+
+                track.style.transition = 'transform 0.4s ease-out';
+                goToSlide(currentIndex);
+                sliderViewport.classList.remove('grabbing');
+            }
+
+            function getPositionX(event) {
+                return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+            }
+
+            function setSliderPosition() {
+                track.style.transform = `translateX(${currentTranslate}px)`;
+            }
+            
+            function goToSlide(index) {
+                currentTranslate = index * -slideWidth;
+                prevTranslate = currentTranslate;
+                currentIndex = index;
+                setSliderPosition();
+                updateActiveDot();
+            }
+            
+            function updateActiveDot() {
+                const dots = pagination.children;
+                Array.from(dots).forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            }
+
+            initializeSlider();
         });
-        updateActiveDot();
-    }
-
-    function addEventListeners() {
-        sliderViewport.addEventListener('mousedown', dragStart);
-        sliderViewport.addEventListener('touchstart', dragStart, { passive: true });
-
-        sliderViewport.addEventListener('mouseup', dragEnd);
-        sliderViewport.addEventListener('mouseleave', dragEnd);
-        sliderViewport.addEventListener('touchend', dragEnd);
-
-        sliderViewport.addEventListener('mousemove', drag);
-        sliderViewport.addEventListener('touchmove', drag, { passive: true });
-        
-        window.addEventListener('resize', onResize);
-    }
-    
-    function onResize() {
-        updateSlideWidth();
-        // Snap al slide actual con el nuevo ancho, sin transición para que sea instantáneo
-        track.style.transition = 'none';
-        goToSlide(currentIndex);
-        // Pequeño truco para reactivar la transición después del resize
-        setTimeout(() => {
-            track.style.transition = 'transform 0.4s ease-out';
-        }, 50);
-    }
-
-    function dragStart(event) {
-        isDragging = true;
-        startPos = getPositionX(event);
-        sliderViewport.classList.add('grabbing');
-        track.style.transition = 'none';
-    }
-
-    function drag(event) {
-        if (isDragging) {
-            const currentPosition = getPositionX(event);
-            currentTranslate = prevTranslate + currentPosition - startPos;
-            setSliderPosition();
-        }
-    }
-
-    function dragEnd() {
-        if (!isDragging) return;
-        isDragging = false;
-        const movedBy = currentTranslate - prevTranslate;
-        
-        if (movedBy < -50 && currentIndex < slides.length - 1) {
-            currentIndex += 1;
-        }
-        if (movedBy > 50 && currentIndex > 0) {
-            currentIndex -= 1;
-        }
-
-        track.style.transition = 'transform 0.4s ease-out';
-        goToSlide(currentIndex);
-        sliderViewport.classList.remove('grabbing');
-    }
-
-    function getPositionX(event) {
-        return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
-    }
-
-    function setSliderPosition() {
-        track.style.transform = `translateX(${currentTranslate}px)`;
-    }
-    
-    function goToSlide(index) {
-        currentTranslate = index * -slideWidth;
-        prevTranslate = currentTranslate;
-        currentIndex = index;
-        setSliderPosition();
-        updateActiveDot();
-    }
-    
-    function updateActiveDot() {
-        const dots = pagination.children;
-        Array.from(dots).forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentIndex);
-        });
-    }
-
-    // Iniciar el slider
-    initializeSlider();
-});
-</script>
+    </script>
 
 </body>
 </html>
