@@ -75,9 +75,9 @@
             font-size: 2.5rem;
             margin-bottom: 40px;
         }
-        .features-grid, .partners-grid, .comparison-grid {
+        .features-grid, .partners-grid, .comparison-grid, .examples-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 40px;
             text-align: left;
         }
@@ -123,7 +123,7 @@
             margin-bottom: 10px;
         }
         .comparison-box ul li::before {
-            font-family: "Font Awesome 5 Free";
+            font-family: "Font Awesome 6 Free";
             font-weight: 900;
             position: absolute;
             left: 0;
@@ -216,52 +216,78 @@
             justify-content: center;
             font-size: 1rem;
         }
+        
+        /* --- ESTILOS PARA LAS NUEVAS SECCIONES --- */
+        .ai-examples-section {
+            background-color: #ffffff;
+        }
+        .example-card {
+            background-color: #f4f4f5;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+        .example-prompt {
+            font-style: italic;
+            color: #52525b;
+            border-left: 3px solid #3DDC84;
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+        .example-result h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .impact-section {
+            background-color: #e0e0e0;
+        }
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            align-items: center;
+        }
+        .impact-step {
+            text-align: center;
+            position: relative;
+        }
+        .impact-step i {
+            font-size: 3rem;
+            color: #16a34a;
+            margin-bottom: 15px;
+        }
+        .impact-step h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        /* Flechas para la infografía en escritorio */
+        @media (min-width: 769px) {
+            .impact-step:not(:last-child)::after {
+                content: '\f061'; /* Icono de flecha derecha */
+                font-family: "Font Awesome 6 Free";
+                font-weight: 900;
+                position: absolute;
+                top: 30%;
+                right: -25px;
+                transform: translateY(-50%);
+                font-size: 1.5rem;
+                color: #52525b;
+            }
+        }
+        /* --- FIN DE ESTILOS NUEVOS --- */
+
         @media (max-width: 768px) {
             .demo-container {
                 grid-template-columns: 1fr;
             }
-        }
-        
-        .gemini-tool-section {
-            background-color: #ffffff;
-        }
-        .gemini-tool {
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: left;
-        }
-        .gemini-tool-input {
-            width: 100%;
-            padding: 15px;
-            font-size: 1rem;
-            border-radius: 8px;
-            border: 2px solid #e0e0e0;
-            margin-bottom: 15px;
-            box-sizing: border-box;
-        }
-        .gemini-tool-button {
-            background-color: #16a34a;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 1rem;
-            font-weight: bold;
-            border-radius: 50px;
-            cursor: pointer;
-            width: 100%;
-            transition: background-color 0.2s ease;
-        }
-        .gemini-tool-button:hover {
-            background-color: #1a9a4a;
-        }
-        .gemini-tool-result {
-            margin-top: 30px;
-            padding: 20px;
-            border-radius: 8px;
-            background-color: #f4f4f5;
-            white-space: pre-wrap;
-            font-family: monospace;
-            text-align: left;
+             .impact-grid {
+                gap: 50px;
+            }
         }
     </style>
 </head>
@@ -330,17 +356,57 @@
         </div>
     </section>
     
-    <section id="gemini-tool" class="gemini-tool-section">
+    <section id="ai-examples" class="ai-examples-section">
         <div class="container">
-            <h2>Dinamiza tu Oferta Cultural con IA</h2>
-            <p style="max-width: 700px; margin: 0 auto 40px auto;">Introduce un concepto y descubre cómo nuestra tecnología puede generar ideas creativas para nuevas rutas turísticas o festivales, demostrando el potencial de Duende Finder como socio estratégico.</p>
-            <div class="gemini-tool">
-                <input type="text" id="idea-input" class="gemini-tool-input" placeholder="Ej: Flamenco y vino en Jerez, La ruta de la bulería...">
-                <button id="generate-idea-btn" class="gemini-tool-button">✨ Generar Idea Creativa</button>
-                <div id="idea-result" class="gemini-tool-result" style="display: none;"></div>
+            <h2>Descubre el Poder de Nuestra IA</h2>
+            <p style="max-width: 700px; margin: 0 auto 40px auto;">En lugar de un generador en vivo, te mostramos ejemplos reales del tipo de experiencias únicas y rutas culturales que nuestra tecnología puede diseñar para enriquecer la oferta turística.</p>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <div class="example-prompt">"Ruta de la Bulería en Jerez"</div>
+                    <div class="example-result">
+                        <h4>Ruta "Compás de Jerez"</h4>
+                        <p>Un itinerario de día completo que explora los barrios de Santiago y San Miguel, cuna de la bulería. Incluye una visita guiada por los monumentos de Lola Flores y La Paquera, un taller de palmas en una peña local y culmina con una cena-espectáculo en un tabanco tradicional para vivir el flamenco más auténtico.</p>
+                    </div>
+                </div>
+                <div class="example-card">
+                    <div class="example-prompt">"Federico García Lorca y el Flamenco en Granada"</div>
+                    <div class="example-result">
+                        <h4>Paseo "Poeta en el Sacromonte"</h4>
+                        <p>Una experiencia vespertina que conecta la poesía de Lorca con el duende de las zambras gitanas. El recorrido comienza en el mirador de San Nicolás, con lecturas de poemas, y desciende hacia una cueva del Sacromonte para un espectáculo de flamenco íntimo, explicando la conexión del poeta con el Cante Jondo.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <section id="impact" class="impact-section">
+        <div class="container">
+            <h2>Un Motor para la Economía Local</h2>
+            <div class="impact-grid">
+                <div class="impact-step">
+                    <i class="fas fa-user-check"></i>
+                    <h3>Turista Conectado</h3>
+                    <p>Encuentra y planifica su experiencia flamenca ideal en segundos.</p>
+                </div>
+                <div class="impact-step">
+                    <i class="fas fa-brain"></i>
+                    <h3>Planificación con IA</h3>
+                    <p>Recibe un plan completo: evento, cena, transporte y contexto cultural.</p>
+                </div>
+                <div class="impact-step">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Aumento del Gasto</h3>
+                    <p>El turista consume más en tablaos, restaurantes y comercios locales.</p>
+                </div>
+                <div class="impact-step">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Datos Estratégicos</h3>
+                    <p>Se generan datos de valor para optimizar la oferta turística de la región.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <section id="caracteristicas" class="container">
         <h2>Una Herramienta Única para el Viajero Moderno</h2>
@@ -416,85 +482,19 @@
                     step.classList.add('active');
                     
                     const newImageSrc = step.dataset.image;
-                    const newText = step.dataset.text;
-
+                    
                     demoImage.style.opacity = 0;
                     setTimeout(() => {
                         demoImage.src = newImageSrc;
                         demoImage.style.opacity = 1;
                     }, 300);
 
-                    demoSteps.forEach(s => {
-                        s.querySelector('p').textContent = '';
-                    });
-                    step.querySelector('p').textContent = newText;
+                    // Esta parte se ha modificado para que el texto de cada paso sea siempre visible
+                    // y no se borre al hacer clic en otro.
                 });
             });
 
-            const generateBtn = document.getElementById('generate-idea-btn');
-            const ideaInput = document.getElementById('idea-input');
-            const ideaResult = document.getElementById('idea-result');
-
-            generateBtn.addEventListener('click', async () => {
-                const theme = ideaInput.value;
-                if (!theme) {
-                    alert('Por favor, introduce un tema o concepto.');
-                    return;
-                }
-
-                ideaResult.style.display = 'block';
-                ideaResult.textContent = 'Generando idea... el duende está pensando...';
-                generateBtn.disabled = true;
-
-                const prompt = `Actúa como un gestor cultural y experto en turismo de Andalucía. Tu tarea es generar una propuesta creativa y estructurada para un nuevo producto turístico-cultural basado en el siguiente concepto: "${theme}".
-
-                La respuesta debe tener el siguiente formato:
-                
-                **Título Propuesto:** [Un nombre atractivo y comercial para el evento o ruta]
-                
-                **Concepto:** [Un párrafo breve (2-3 frases) que describa la idea principal y su atractivo.]
-                
-                **Actividades Clave (3 a 5 puntos):**
-                - [Actividad 1: Descripción detallada]
-                - [Actividad 2: Descripción detallada]
-                - [Actividad 3: Descripción detallada]
-                
-                **Público Objetivo:** [Describe brevemente a quién se dirige esta nueva oferta.]`;
-
-                try {
-                    let chatHistory = [];
-                    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
-                    const payload = { contents: chatHistory };
-                    
-                    const apiKey = ""; 
-                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-                    
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    if (!response.ok) {
-                        throw new Error(`Error de la API: ${response.statusText}`);
-                    }
-
-                    const result = await response.json();
-                    
-                    if (result.candidates && result.candidates.length > 0) {
-                        const text = result.candidates[0].content.parts[0].text;
-                        ideaResult.textContent = text;
-                    } else {
-                        throw new Error("La respuesta de la API no contiene el texto esperado.");
-                    }
-
-                } catch (error) {
-                    console.error("Error al generar idea:", error);
-                    ideaResult.textContent = `Hubo un error al generar la idea. Por favor, inténtalo de nuevo.\nDetalle: ${error.message}`;
-                } finally {
-                    generateBtn.disabled = false;
-                }
-            });
+            // El código para el botón de generar ideas ha sido eliminado.
         });
     </script>
 
