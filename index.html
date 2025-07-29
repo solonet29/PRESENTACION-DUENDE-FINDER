@@ -154,8 +154,6 @@
         footer a:hover {
             text-decoration: underline;
         }
-
-        /* --- ESTILOS PARA LA DEMO INTERACTIVA --- */
         .live-demo-section {
             background-color: #ffffff;
         }
@@ -191,7 +189,6 @@
             height: 100%; 
             border: none;
         }
-        
         .ai-examples-section {
             background-color: #ffffff;
         }
@@ -216,7 +213,6 @@
             margin-top: 0;
             margin-bottom: 10px;
         }
-        
         .impact-section {
             background-color: #e0e0e0;
         }
@@ -241,7 +237,7 @@
         }
         @media (min-width: 769px) {
             .impact-step:not(:last-child)::after {
-                content: '\f061'; /* Icono de flecha derecha */
+                content: '\f061';
                 font-family: "Font Awesome 6 Free";
                 font-weight: 900;
                 position: absolute;
@@ -252,13 +248,11 @@
                 color: #52525b;
             }
         }
-
         @media (max-width: 768px) {
              .impact-grid {
                 gap: 50px;
             }
         }
-
         .comparison-box,
         .example-card,
         .feature-item,
@@ -267,13 +261,10 @@
         }
         .comparison-box:hover,
         .example-card:hover,
-        .feature-item:hover,
-        .partner-benefit:hover {
+        .feature-item:hover {
             transform: translateY(-8px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
-
-        /* --- Estilos para las nuevas secciones de datos y mercado --- */
         .stats-section {
             background-color: #e0e0e0;
         }
@@ -314,7 +305,6 @@
             margin-top: 5px;
             color: #18181b;
         }
-
         .competitor-table-section {
             background-color: #ffffff;
         }
@@ -355,7 +345,6 @@
         .competitor-table .nuestro-producto td:first-child {
             color: #16a34a;
         }
-
         .opportunity-section {
              background-color: #18181b;
              color: #ffffff;
@@ -366,7 +355,43 @@
         .opportunity-section .features-grid .feature-item i {
             color: #3DDC84;
         }
-
+        .slider-container {
+            position: relative;
+        }
+        .slider-viewport {
+            overflow: hidden;
+            cursor: grab;
+        }
+        .slider-viewport.grabbing {
+            cursor: grabbing;
+        }
+        .slider-track {
+            display: flex;
+            transition: transform 0.4s ease-out;
+        }
+        .partners-section .partner-benefit {
+            width: 100%;
+            flex-shrink: 0;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+        .slider-pagination {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 25px;
+        }
+        .pagination-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #c4c4c4;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .pagination-dot.active {
+            background-color: #3DDC84;
+        }
     </style>
 </head>
 <body>
@@ -576,23 +601,29 @@
         <div class="container">
             <h2>Un Socio Estratégico para la Promoción de Andalucía</h2>
             <p style="max-width: 700px; margin: 0 auto 40px auto;">Duende Finder es más que una app; es un canal directo para potenciar el turismo de alto valor y dinamizar la economía local.</p>
-            <div class="partners-grid">
-                <div class="partner-benefit">
-                    <h3><i class="fas fa-plane-departure"></i> Impulso al Turismo de Calidad</h3>
-                    <p>Atraemos a un turista interesado en la cultura, que planifica su viaje con antelación, alarga su estancia y busca experiencias auténticas, generando un mayor impacto económico.</p>
+
+            <div class="slider-container">
+                <div class="slider-viewport">
+                    <div class="slider-track">
+                        <div class="partner-benefit">
+                            <h3><i class="fas fa-plane-departure"></i> Impulso al Turismo de Calidad</h3>
+                            <p>Atraemos a un turista interesado en la cultura, que planifica su viaje con antelación, alarga su estancia y busca experiencias auténticas, generando un mayor impacto económico.</p>
+                        </div>
+                        <div class="partner-benefit">
+                            <h3><i class="fas fa-bullhorn"></i> Puesta en Valor del Patrimonio</h3>
+                            <p>Digitalizamos y presentamos el flamenco de una forma moderna y accesible a una audiencia global, reforzando la imagen de Andalucía como cuna de un arte universal.</p>
+                        </div>
+                        <div class="partner-benefit">
+                            <h3><i class="fas fa-chart-line"></i> Dinamización de la Economía Local</h3>
+                            <p>Dirigimos activamente a los usuarios a tablaos, peñas, restaurantes y comercios, beneficiando directamente al tejido empresarial local que vive del flamenco y su cultura.</p>
+                        </div>
+                        <div class="partner-benefit">
+                            <h3><i class="fas fa-database"></i> Datos para una Gestión Inteligente</h3>
+                            <p>Ofrecemos la posibilidad de obtener datos anónimos sobre la demanda turística: ¿Qué artistas son los más buscados? ¿Qué ciudades generan más interés? Información clave para la toma de decisiones.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="partner-benefit">
-                    <h3><i class="fas fa-bullhorn"></i> Puesta en Valor del Patrimonio</h3>
-                    <p>Digitalizamos y presentamos el flamenco de una forma moderna y accesible a una audiencia global, reforzando la imagen de Andalucía como cuna de un arte universal.</p>
-                </div>
-                <div class="partner-benefit">
-                    <h3><i class="fas fa-chart-line"></i> Dinamización de la Economía Local</h3>
-                    <p>Dirigimos activamente a los usuarios a tablaos, peñas, restaurantes y comercios, beneficiando directamente al tejido empresarial local que vive del flamenco y su cultura.</p>
-                </div>
-                <div class="partner-benefit">
-                    <h3><i class="fas fa-database"></i> Datos para una Gestión Inteligente</h3>
-                    <p>Ofrecemos la posibilidad de obtener datos anónimos sobre la demanda turística: ¿Qué artistas son los más buscados? ¿Qué ciudades generan más interés? Información clave para la toma de decisiones estratégicas.</p>
-                </div>
+                <div class="slider-pagination"></div>
             </div>
         </div>
     </section>
@@ -613,7 +644,89 @@
     </footer>
 
     <script>
-        // No se necesita JavaScript para esta versión de la página.
+        document.addEventListener('DOMContentLoaded', () => {
+            const sliderViewport = document.querySelector('.slider-viewport');
+            const track = document.querySelector('.slider-track');
+            const slides = Array.from(track.children);
+            const pagination = document.querySelector('.slider-pagination');
+            if (!sliderViewport) return;
+            const slideWidth = slides[0].getBoundingClientRect().width;
+            let currentIndex = 0;
+            let isDragging = false;
+            let startPos = 0;
+            let currentTranslate = 0;
+            let prevTranslate = 0;
+
+            slides.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('pagination-dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    goToSlide(index);
+                });
+                pagination.appendChild(dot);
+            });
+            const dots = Array.from(pagination.children);
+
+            sliderViewport.addEventListener('mousedown', dragStart);
+            sliderViewport.addEventListener('touchstart', dragStart, { passive: true });
+            sliderViewport.addEventListener('mouseup', dragEnd);
+            sliderViewport.addEventListener('mouseleave', dragEnd);
+            sliderViewport.addEventListener('touchend', dragEnd);
+            sliderViewport.addEventListener('mousemove', drag);
+            sliderViewport.addEventListener('touchmove', drag, { passive: true });
+            
+            function dragStart(event) {
+                isDragging = true;
+                startPos = getPositionX(event);
+                sliderViewport.classList.add('grabbing');
+                track.style.transition = 'none';
+            }
+
+            function drag(event) {
+                if (isDragging) {
+                    const currentPosition = getPositionX(event);
+                    currentTranslate = prevTranslate + currentPosition - startPos;
+                    setSliderPosition();
+                }
+            }
+
+            function dragEnd() {
+                if (!isDragging) return;
+                isDragging = false;
+                const movedBy = currentTranslate - prevTranslate;
+                if (movedBy < -50 && currentIndex < slides.length - 1) {
+                    currentIndex += 1;
+                }
+                if (movedBy > 50 && currentIndex > 0) {
+                    currentIndex -= 1;
+                }
+                goToSlide(currentIndex);
+                sliderViewport.classList.remove('grabbing');
+                track.style.transition = 'transform 0.4s ease-out';
+            }
+
+            function getPositionX(event) {
+                return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+            }
+
+            function setSliderPosition() {
+                track.style.transform = `translateX(${currentTranslate}px)`;
+            }
+            
+            function goToSlide(index) {
+                currentTranslate = index * -slideWidth;
+                prevTranslate = currentTranslate;
+                currentIndex = index;
+                setSliderPosition();
+                updatePagination();
+            }
+            
+            function updatePagination() {
+                dots.forEach(dot => dot.classList.remove('active'));
+                dots[currentIndex].classList.add('active');
+            }
+        });
     </script>
 
 </body>
