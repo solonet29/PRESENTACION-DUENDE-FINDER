@@ -143,6 +143,8 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+/* --- ESTILOS PARA LA DEMO INTERACTIVA --- */
 .live-demo-section {
     background-color: #ffffff;
 }
@@ -178,6 +180,8 @@ footer a:hover {
     height: 100%; 
     border: none;
 }
+
+/* --- ESTILOS PARA OTRAS SECCIONES --- */
 .ai-examples-section {
     background-color: #ffffff;
 }
@@ -443,19 +447,8 @@ footer a:hover {
     position: absolute;
     left: 0;
 }
-@media (min-width: 769px) {
-    .impact-step:not(:last-child)::after {
-        content: '\f061';
-        font-family: "Font Awesome 6 Free";
-        font-weight: 900;
-        position: absolute;
-        top: 30%;
-        right: -25px;
-        transform: translateY(-50%);
-        font-size: 1.5rem;
-        color: #52525b;
-    }
-}
+
+/* --- REGLAS PARA DISPOSITIVOS MÓVILES --- */
 @media (max-width: 768px) {
     .impact-grid {
         gap: 50px;
@@ -469,6 +462,8 @@ footer a:hover {
     .mobile-only-button {
         display: inline-block;
     }
+    
+    /* --- CORRECCIÓN VISUAL PARA LA TABLA EN MÓVILES --- */
     .competitor-table thead {
         display: none;
     }
@@ -494,23 +489,40 @@ footer a:hover {
         border-bottom: 1px solid #e0e0e0;
     }
     .competitor-table td {
-        text-align: right;
         padding: 12px 15px;
-        position: relative;
         border-bottom: none;
+        position: relative; /* Cambiado de 'relative' para flexbox */
     }
-    .competitor-table td:last-child {
-        border-bottom: none;
+    .competitor-table td:not(:first-child) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #f0f0f0; /* Línea separadora sutil */
+    }
+    .competitor-table tr td:last-of-type {
+        border-bottom: none; /* Elimina la última línea separadora */
     }
     .competitor-table td:not(:first-child)::before {
         content: attr(data-label);
-        position: absolute;
-        left: 15px;
         font-weight: normal;
         color: #52525b;
+        /* Ya no necesita 'position: absolute' */
     }
     .competitor-table td.nuestro-producto::before {
         font-weight: bold;
         color: #16a34a;
+    }
+}
+@media (min-width: 769px) {
+    .impact-step:not(:last-child)::after {
+        content: '\f061';
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        top: 30%;
+        right: -25px;
+        transform: translateY(-50%);
+        font-size: 1.5rem;
+        color: #52525b;
     }
 }
