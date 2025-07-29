@@ -318,8 +318,8 @@ footer a:hover {
     color: #16a34a;
 }
 .opportunity-section {
-     background-color: #18181b;
-     color: #ffffff;
+    background-color: #18181b;
+    color: #ffffff;
 }
 .opportunity-section h2 {
     color: #3DDC84;
@@ -376,11 +376,11 @@ footer a:hover {
     color: #3DDC84;
 }
 .strategic-alliance-section h3 {
-     font-family: 'Playfair Display', serif;
-     font-size: 2rem;
-     margin-top: 50px;
-     margin-bottom: 30px;
-     color: #ffffff;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: #ffffff;
 }
 .value-prop-grid {
     display: grid;
@@ -493,6 +493,10 @@ footer a:hover {
     .competitor-table td {
         padding: 12px 15px;
         border-bottom: 1px solid #eee;
+        /* --- CAMBIOS APLICADOS AQUÍ --- */
+        display: flex; /* Convierte la celda en un contenedor flex */
+        justify-content: space-between; /* Distribuye el espacio entre los elementos */
+        align-items: center; /* Centra verticalmente los elementos */
     }
     .competitor-table td:first-child {
         background-color: #f4f4f5;
@@ -500,23 +504,27 @@ footer a:hover {
         font-size: 1.1rem;
         text-align: center;
         border-bottom: 1px solid #e0e0e0;
+        /* --- Volvemos a 'block' para que ocupe el ancho completo --- */
+        display: block;
     }
     .competitor-table tr td:last-of-type {
         border-bottom: none;
     }
     .competitor-table td:not(:first-child) {
-        text-align: left; /* Alineamos todo a la izquierda */
+        text-align: left;
     }
     .competitor-table td:not(:first-child)::before {
         content: attr(data-label);
         font-weight: normal;
         color: #52525b;
-        margin-right: 1em; /* Espacio entre el texto y el icono */
+        margin-right: 1em;
         vertical-align: middle;
+        flex-shrink: 0; /* Evita que el texto de la etiqueta se encoja */
     }
     .competitor-table td:not(:first-child) i {
         vertical-align: middle;
-        /* Se elimina el 'float: right' para que se quede junto al texto */
+        margin-left: 10px; /* Espacio entre el texto de la etiqueta y el icono */
+        /* --- Se elimina el 'float: right' para que se quede junto al texto --- */
     }
     .competitor-table td.nuestro-producto::before {
         font-weight: bold;
