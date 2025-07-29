@@ -155,12 +155,9 @@
             text-decoration: underline;
         }
 
-        .demo-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-            text-align: left;
+        /* --- ESTILOS PARA LA DEMO INTERACTIVA --- */
+        .live-demo-section {
+            background-color: #ffffff;
         }
         .phone-mockup {
             background: #121212;
@@ -169,6 +166,8 @@
             padding: 20px 10px 10px 10px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             position: relative;
+            max-width: 400px; /* Ancho máximo del teléfono */
+            margin: 0 auto; /* Centrar el teléfono */
         }
         .phone-mockup::before {
             content: '';
@@ -186,42 +185,12 @@
             border-radius: 30px;
             overflow: hidden;
             aspect-ratio: 9 / 19.5;
+            height: 700px; /* Altura fija para el iframe */
         }
-        .phone-screen img {
+        .phone-screen iframe {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            transition: opacity 0.3s ease-in-out;
-        }
-        .demo-step {
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            cursor: pointer;
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
-        }
-        .demo-step.active {
-            border-color: #3DDC84;
-            background-color: #ffffff;
-        }
-        .demo-step h3 {
-            margin: 0 0 10px 0;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .demo-step h3 span {
-            background-color: #3DDC84;
-            color: #121212;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
+            border: none;
         }
         
         .ai-examples-section {
@@ -286,9 +255,6 @@
         }
 
         @media (max-width: 768px) {
-            .demo-container {
-                grid-template-columns: 1fr;
-            }
              .impact-grid {
                 gap: 50px;
             }
@@ -333,28 +299,13 @@
         </div>
     </section>
 
-    <section id="demo" style="background-color: #ffffff;">
+    <section id="live-demo" class="live-demo-section">
         <div class="container">
-            <h2>Mira Cómo Funciona</h2>
-            <div class="demo-container">
-                <div class="phone-mockup">
-                    <div class="phone-screen">
-                        <img id="demo-image" src="images/captura-buscar.jpeg" alt="Pantalla de la aplicación Duende Finder mostrando la búsqueda de eventos">
-                    </div>
-                </div>
-                <div class="demo-steps">
-                    <div class="demo-step active" data-image="images/captura-buscar.jpeg">
-                        <h3><span>1</span>Busca y Descubre</h3>
-                        <p>El usuario encuentra fácilmente el evento perfecto gracias a una agenda completa y filtros inteligentes.</p>
-                    </div>
-                    <div class="demo-step" data-image="images/captura-plan.jpeg">
-                        <h3><span>2</span>Planifica con IA</h3>
-                        <p>Con un solo clic, nuestra IA genera un plan completo para la noche: dónde cenar, consejos prácticos y datos culturales sobre el espectáculo.</p>
-                    </div>
-                    <div class="demo-step" data-image="images/captura-calendario.jpeg">
-                        <h3><span>3</span>Añade y Disfruta</h3>
-                        <p>El usuario añade el evento a su calendario preferido con un solo toque, asegurando que no se pierda la experiencia.</p>
-                    </div>
+            <h2>Pruébalo en Tiempo Real</h2>
+            <p style="max-width: 600px; margin: 0 auto 40px auto;">Interactúa directamente con nuestro buscador. Utiliza los filtros para encontrar eventos por fecha, ciudad o artista y comprueba la potencia y rapidez de nuestra plataforma.</p>
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <iframe src="https://buscador.afland.es"></iframe>
                 </div>
             </div>
         </div>
@@ -474,27 +425,8 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const demoSteps = document.querySelectorAll('.demo-step');
-            const demoImage = document.getElementById('demo-image');
-            
-            demoSteps.forEach(step => {
-                step.addEventListener('click', () => {
-                    if (step.classList.contains('active')) return;
-
-                    demoSteps.forEach(s => s.classList.remove('active'));
-                    step.classList.add('active');
-                    
-                    const newImageSrc = step.dataset.image;
-                    
-                    demoImage.style.opacity = 0;
-                    setTimeout(() => {
-                        demoImage.src = newImageSrc;
-                        demoImage.style.opacity = 1;
-                    }, 300);
-                });
-            });
-        });
+        // Script vacío, ya que la funcionalidad de cambio de imagen fue eliminada.
+        // Se puede dejar así o eliminar la etiqueta <script> por completo.
     </script>
 
 </body>
