@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duende Finder - La Plataforma Digital para el Turismo Flamenco</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f5;
+            color: #18181b;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1598793526280-d1cf20b4f848?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+        }
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin: 0;
+            color: #3DDC84;
+        }
+        header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 15px auto 30px auto;
+        }
+        .header-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #3DDC84;
+            color: #121212;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+        .cta-button.secondary {
+            background-color: transparent;
+            color: #3DDC84;
+            border: 2px solid #3ddc85;
+        }
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+        .features-grid, .partners-grid, .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: left;
+        }
+        .feature-item i {
+            font-size: 2.5rem;
+            color: #16a34a;
+            margin-bottom: 15px;
+        }
+        .feature-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .partners-section {
+            background-color: #e0e0e0;
+        }
+        .partner-benefit {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .comparison-box {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+        }
+        .comparison-box.new-way {
+            border-color: #3DDC84;
+        }
+        .comparison-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-top: 0;
+        }
+        .comparison-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        .comparison-box ul li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        .comparison-box ul li::before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+        .old-way ul li::before {
+            content: "\f00d"; /* Icono de X */
+            color: #d9534f;
+        }
+        .new-way ul li::before {
+            content: "\f00c"; /* Icono de check */
+            color: #16a34a;
+        }
+        .pilot-section {
+            background-color: #18181b;
+            color: #ffffff;
+        }
+        footer {
+            background-color: #121212;
+            color: #a0a0a0;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .demo-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            text-align: left;
+        }
+        .phone-mockup {
+            background: #121212;
+            border: 10px solid #121212;
+            border-radius: 40px;
+            padding: 20px 10px 10px 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+        }
+        .phone-mockup::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 5px;
+            background-color: #444;
+            border-radius: 5px;
+        }
+        .phone-screen {
+            background: #fff;
+            border-radius: 30px;
+            overflow: hidden;
+            aspect-ratio: 9 / 19.5;
+        }
+        .phone-screen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .demo-step {
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .demo-step.active {
+            border-color: #3DDC84;
+            background-color: #ffffff;
+        }
+        .demo-step h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .demo-step h3 span {
+            background-color: #3DDC84;
+            color: #121212;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+        @media (max-width: 768px) {
+            .demo-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .gemini-tool-section {
+            background-color: #ffffff;
+        }
+        .gemini-tool {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .gemini-tool-input {
+            width: 100%;
+            padding: 15px;
+            font-size: 1rem;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+        .gemini-tool-button {
+            background-color: #16a34a;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.2s ease;
+        }
+        .gemini-tool-button:hover {
+            background-color: #1a9a4a;
+        }
+        .gemini-tool-result {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f4f4f5;
+            white-space: pre-wrap;
+            font-family: monospace;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Duende Finder</h1>
+        <p>Dinamizamos el flamenco: Conectamos el patrimonio cultural de Andalucía con el turista del siglo XXI a través de la Inteligencia Artificial.</p>
+        <div class="header-buttons">
+            <a href="https://buscador.afland.es" target="_blank" rel="noopener noreferrer" class="cta-button secondary">Ver en Tiempo Real</a>
+            <a href="#contacto" class="cta-button">Solicitar una Demostración</a>
+        </div>
+    </header>
+
+    <section id="problema" class="container">
+        <h2>El Estado Actual: Un Potencial Desaprovechado</h2>
+        <p style="max-width: 700px; margin: 0 auto 40px auto;">Hoy, encontrar una experiencia flamenca auténtica es un laberinto digital. La oferta, rica y variada, se encuentra fragmentada en un ecosistema de herramientas obsoletas que no satisfacen al viajero moderno:</p>
+        <div class="comparison-grid">
+            <div class="comparison-box old-way">
+                <h3>La Búsqueda Tradicional</h3>
+                <ul>
+                    <li>Agendas incompletas y dispersas en múltiples portales.</li>
+                    <li>Webs institucionales con información poco especializada.</li>
+                    <li>Experiencias móviles deficientes y poco intuitivas.</li>
+                    <li>Nula ayuda en la planificación más allá del evento.</li>
+                    <li>El turista se frustra, el artista pierde visibilidad.</li>
+                </ul>
+            </div>
+            <div class="comparison-box new-way">
+                <h3>La Solución: Duende Finder</h3>
+                <ul>
+                    <li>Toda la oferta centralizada en una única plataforma.</li>
+                    <li>Filtros inteligentes y una interfaz moderna y rápida.</li>
+                    <li>Diseño "Mobile-First" pensado para el viajero.</li>
+                    <li>Planificación completa de la experiencia con IA.</li>
+                    <li>El turista planifica más, disfruta más y consume más.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="demo" style="background-color: #ffffff;">
+        <div class="container">
+            <h2>Mira Cómo Funciona</h2>
+            <div class="demo-container">
+                <div class="phone-mockup">
+                    <div class="phone-screen">
+                        <img id="demo-image" src="images/captura-buscar.png" alt="Pantalla de la aplicación Duende Finder mostrando la búsqueda de eventos">
+                    </div>
+                </div>
+                <div class="demo-steps">
+                    <div class="demo-step active" data-image="images/captura-buscar.png" data-text="El usuario encuentra fácilmente el evento perfecto gracias a una agenda completa y filtros inteligentes.">
+                        <h3><span>1</span>Busca y Descubre</h3>
+                        <p id="demo-text">El usuario encuentra fácilmente el evento perfecto gracias a una agenda completa y filtros inteligentes.</p>
+                    </div>
+                    <div class="demo-step" data-image="images/captura-plan.png" data-text="Con un solo clic, nuestra IA genera un plan completo para la noche: dónde cenar, consejos prácticos y datos culturales sobre el espectáculo.">
+                        <h3><span>2</span>Planifica con IA</h3>
+                        <p>Con un solo clic, nuestra IA genera un plan completo para la noche: dónde cenar, consejos prácticos y datos culturales sobre el espectáculo.</p>
+                    </div>
+                    <div class="demo-step" data-image="images/captura-calendario.png" data-text="El usuario añade el evento a su calendario preferido con un solo toque, asegurando que no se pierda la experiencia.">
+                        <h3><span>3</span>Añade y Disfruta</h3>
+                        <p>El usuario añade el evento a su calendario preferido con un solo toque, asegurando que no se pierda la experiencia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="gemini-tool" class="gemini-tool-section">
+        <div class="container">
+            <h2>Dinamiza tu Oferta Cultural con IA</h2>
+            <p style="max-width: 700px; margin: 0 auto 40px auto;">Introduce un concepto y descubre cómo nuestra tecnología puede generar ideas creativas para nuevas rutas turísticas o festivales, demostrando el potencial de Duende Finder como socio estratégico.</p>
+            <div class="gemini-tool">
+                <input type="text" id="idea-input" class="gemini-tool-input" placeholder="Ej: Flamenco y vino en Jerez, La ruta de la bulería...">
+                <button id="generate-idea-btn" class="gemini-tool-button">✨ Generar Idea Creativa</button>
+                <div id="idea-result" class="gemini-tool-result" style="display: none;"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="caracteristicas" class="container">
+        <h2>Una Herramienta Única para el Viajero Moderno</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <i class="fas fa-search-location"></i>
+                <h3>Agenda Centralizada e Inteligente</h3>
+                <p>Acceso a cientos de eventos en toda Europa, con filtros potentes que permiten encontrar el espectáculo perfecto por artista, ciudad o fecha en segundos.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-magic-sparkles"></i>
+                <h3>"Planear Noche" con IA</h3>
+                <p>Nuestra IA no solo encuentra un evento, crea una experiencia. Genera una guía personalizada con recomendaciones de tapas, datos culturales y consejos prácticos para una noche redonda.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-route"></i>
+                <h3>Itinerarios de Viaje a Medida</h3>
+                <p>El usuario introduce un destino y unas fechas, y nuestra IA diseña un itinerario de viaje flamenco, sugiriendo eventos y actividades culturales para cada día.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="socios" class="partners-section">
+        <div class="container">
+            <h2>Un Socio Estratégico para la Promoción de Andalucía</h2>
+            <p style="max-width: 700px; margin: 0 auto 40px auto;">Duende Finder es más que una app; es un canal directo para potenciar el turismo de alto valor y dinamizar la economía local.</p>
+            <div class="partners-grid">
+                <div class="partner-benefit">
+                    <h3><i class="fas fa-plane-departure"></i> Impulso al Turismo de Calidad</h3>
+                    <p>Atraemos a un turista interesado en la cultura, que planifica su viaje con antelación, alarga su estancia y busca experiencias auténticas, generando un mayor impacto económico.</p>
+                </div>
+                <div class="partner-benefit">
+                    <h3><i class="fas fa-bullhorn"></i> Puesta en Valor del Patrimonio</h3>
+                    <p>Digitalizamos y presentamos el flamenco de una forma moderna y accesible a una audiencia global, reforzando la imagen de Andalucía como cuna de un arte universal.</p>
+                </div>
+                <div class="partner-benefit">
+                    <h3><i class="fas fa-chart-line"></i> Dinamización de la Economía Local</h3>
+                    <p>Dirigimos activamente a los usuarios a tablaos, peñas, restaurantes y comercios, beneficiando directamente al tejido empresarial local que vive del flamenco y su cultura.</p>
+                </div>
+                <div class="partner-benefit">
+                    <h3><i class="fas fa-database"></i> Datos para una Gestión Inteligente</h3>
+                    <p>Ofrecemos la posibilidad de obtener datos anónimos sobre la demanda turística: ¿Qué artistas son los más buscados? ¿Qué ciudades generan más interés? Información clave para la toma de decisiones estratégicas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="piloto" class="pilot-section">
+        <div class="container">
+            <h2>Colaboremos: El Proyecto Piloto</h2>
+            <p style="max-width: 700px; margin: 0 auto 30px auto;">Proponemos un modelo de colaboración ágil y medible. Iniciemos con un <strong>proyecto piloto de 6 meses</strong> en su provincia. Le ofrecemos convertir a Duende Finder en la herramienta de promoción flamenca recomendada, destacando sus eventos y obteniendo datos de impacto a cambio de un patrocinio institucional.</p>
+            <a href="#contacto" class="cta-button">Contactar para un Proyecto Piloto</a>
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <div class="container">
+            <p>&copy; 2025 Duende Finder. Todos los derechos reservados.</p>
+            <p><strong>Contacto:</strong> angelpiconlinan@gmail.com</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const demoSteps = document.querySelectorAll('.demo-step');
+            const demoImage = document.getElementById('demo-image');
+            
+            demoSteps.forEach(step => {
+                step.addEventListener('click', () => {
+                    if (step.classList.contains('active')) return;
+
+                    demoSteps.forEach(s => s.classList.remove('active'));
+                    step.classList.add('active');
+                    
+                    const newImageSrc = step.dataset.image;
+                    const newText = step.dataset.text;
+
+                    demoImage.style.opacity = 0;
+                    setTimeout(() => {
+                        demoImage.src = newImageSrc;
+                        demoImage.style.opacity = 1;
+                    }, 300);
+
+                    demoSteps.forEach(s => {
+                        s.querySelector('p').textContent = '';
+                    });
+                    step.querySelector('p').textContent = newText;
+                });
+            });
+
+            const generateBtn = document.getElementById('generate-idea-btn');
+            const ideaInput = document.getElementById('idea-input');
+            const ideaResult = document.getElementById('idea-result');
+
+            generateBtn.addEventListener('click', async () => {
+                const theme = ideaInput.value;
+                if (!theme) {
+                    alert('Por favor, introduce un tema o concepto.');
+                    return;
+                }
+
+                ideaResult.style.display = 'block';
+                ideaResult.textContent = 'Generando idea... el duende está pensando...';
+                generateBtn.disabled = true;
+
+                const prompt = `Actúa como un gestor cultural y experto en turismo de Andalucía. Tu tarea es generar una propuesta creativa y estructurada para un nuevo producto turístico-cultural basado en el siguiente concepto: "${theme}".
+
+                La respuesta debe tener el siguiente formato:
+                
+                **Título Propuesto:** [Un nombre atractivo y comercial para el evento o ruta]
+                
+                **Concepto:** [Un párrafo breve (2-3 frases) que describa la idea principal y su atractivo.]
+                
+                **Actividades Clave (3 a 5 puntos):**
+                - [Actividad 1: Descripción detallada]
+                - [Actividad 2: Descripción detallada]
+                - [Actividad 3: Descripción detallada]
+                
+                **Público Objetivo:** [Describe brevemente a quién se dirige esta nueva oferta.]`;
+
+                try {
+                    let chatHistory = [];
+                    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                    const payload = { contents: chatHistory };
+                    
+                    const apiKey = ""; 
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                    
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`Error de la API: ${response.statusText}`);
+                    }
+
+                    const result = await response.json();
+                    
+                    if (result.candidates && result.candidates.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        ideaResult.textContent = text;
+                    } else {
+                        throw new Error("La respuesta de la API no contiene el texto esperado.");
+                    }
+
+                } catch (error) {
+                    console.error("Error al generar idea:", error);
+                    ideaResult.textContent = `Hubo un error al generar la idea. Por favor, inténtalo de nuevo.\nDetalle: ${error.message}`;
+                } finally {
+                    generateBtn.disabled = false;
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+
+
