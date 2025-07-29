@@ -160,50 +160,37 @@
             background-color: #ffffff;
         }
         .phone-mockup {
-    background: #18181b;
-    border: 10px solid #18181b;
-    border-radius: 40px;
-    padding: 20px 10px 10px 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    position: relative;
-    
-    /* Hacemos el móvil un poco más ancho */
-    max-width: 420px; 
-    
-    margin: 0 auto;
-}
-
-.phone-mockup::before {
-    /* Mantenemos las propiedades de posición y tamaño */
-    content: '';
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 5px;
-    border-radius: 5px;
-
-    /* Un gris oscuro que contrasta bien con el marco negro */
-    background-color: #444; 
-}
+            background: #18181b;
+            border: 10px solid #18181b;
+            border-radius: 40px;
+            padding: 20px 10px 10px 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+            max-width: 420px;
+            margin: 0 auto;
+        }
+        .phone-mockup::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 5px;
+            border-radius: 5px;
+            background-color: #444; 
+        }
         .phone-screen {
-    background: #fff;
-    border-radius: 30px;
-    overflow: hidden;
-    
-    /* Mantenemos la altura fija, que ahora será la única referencia.
-       La línea conflictiva 'aspect-ratio' ha sido eliminada. */
-    height: 750px;
-}
-        
-    .phone-screen iframe {
-    /* Simplificamos al máximo: el iframe ocupa el 100% de la pantalla */
-    width: 100%; 
-    height: 100%; 
-    border: none;
-    /* Eliminamos todas las propiedades de transform y transform-origin */
-}
+            background: #fff;
+            border-radius: 30px;
+            overflow: hidden;
+            height: 750px;
+        }
+        .phone-screen iframe {
+            width: 100%; 
+            height: 100%; 
+            border: none;
+        }
         
         .ai-examples-section {
             background-color: #ffffff;
@@ -271,26 +258,115 @@
                 gap: 50px;
             }
         }
-        /* 1. Estado base: Definimos la transición para que el efecto sea suave */
-.comparison-box,
-.example-card,
-.feature-item,
-.partner-benefit {
-    /* Duración y tipo de animación para el movimiento y la sombra */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
 
-/* 2. Estado hover: Lo que ocurre al pasar el ratón por encima */
-.comparison-box:hover,
-.example-card:hover,
-.feature-item:hover,
-.partner-benefit:hover {
-    /* Movimiento: La tarjeta se desplaza 8 píxeles hacia arriba */
-    transform: translateY(-8px);
+        .comparison-box,
+        .example-card,
+        .feature-item,
+        .partner-benefit {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .comparison-box:hover,
+        .example-card:hover,
+        .feature-item:hover,
+        .partner-benefit:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
 
-    /* Sombra: Hacemos la sombra más notoria para dar efecto de "flotación" */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
+        /* --- Estilos para las nuevas secciones de datos y mercado --- */
+        .stats-section {
+            background-color: #e0e0e0;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-circle {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid #3DDC84;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px auto;
+            background-color: #ffffff;
+            transition: transform 0.3s ease;
+        }
+        .stat-circle:hover {
+            transform: scale(1.05);
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #16a34a;
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-top: 5px;
+            color: #18181b;
+        }
+
+        .competitor-table-section {
+            background-color: #ffffff;
+        }
+        .table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+        .competitor-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+        .competitor-table th, .competitor-table td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .competitor-table th {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            background-color: #f4f4f5;
+        }
+        .competitor-table td:first-child {
+            text-align: left;
+            font-weight: 700;
+        }
+        .competitor-table .fa-check-circle {
+            color: #16a34a;
+            font-size: 1.5rem;
+        }
+        .competitor-table .fa-times-circle {
+            color: #d9534f;
+            font-size: 1.5rem;
+        }
+        .competitor-table .nuestro-producto {
+            background-color: #e8f5e9;
+        }
+        .competitor-table .nuestro-producto td:first-child {
+            color: #16a34a;
+        }
+
+        .opportunity-section {
+             background-color: #18181b;
+             color: #ffffff;
+        }
+        .opportunity-section h2 {
+            color: #3DDC84;
+        }
+        .opportunity-section .features-grid .feature-item i {
+            color: #3DDC84;
+        }
+
     </style>
 </head>
 <body>
@@ -306,7 +382,6 @@
 
     <section id="problema" class="container">
         <h2>El Estado Actual: Un Potencial Desaprovechado</h2>
-        <p style="max-width: 700px; margin: 0 auto 40px auto;">Hoy, encontrar una experiencia flamenca auténtica es un laberinto digital. La oferta, rica y variada, se encuentra fragmentada en un ecosistema de herramientas obsoletas que no satisfacen al viajero moderno:</p>
         <div class="comparison-grid">
             <div class="comparison-box old-way">
                 <h3>La Búsqueda Tradicional</h3>
@@ -343,6 +418,116 @@
         </div>
     </section>
     
+    <section id="market-stats" class="stats-section">
+        <div class="container">
+            <h2>Mercado en Cifras: Un Gigante por Conquistar</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-circle">
+                        <span class="stat-number">+30M</span>
+                        <span class="stat-label">Turistas</span>
+                    </div>
+                    <p>Andalucía recibió más de 30 millones de turistas, batiendo récords históricos.</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-circle">
+                        <span class="stat-number">>45%</span>
+                        <span class="stat-label">Busca Cultura</span>
+                    </div>
+                    <p>Más del 45% de los visitantes realizan actividades culturales durante su estancia.</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-circle">
+                        <span class="stat-number">>80%</span>
+                        <span class="stat-label">Usa el Móvil</span>
+                    </div>
+                    <p>El turista moderno planifica y reserva sus experiencias principalmente a través del móvil.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="competitors" class="competitor-table-section">
+        <div class="container">
+            <h2>Análisis de la Competencia</h2>
+            <p style="max-width: 700px; margin: 0 auto 40px auto;">Las herramientas actuales son generalistas o están obsoletas. Ninguna ofrece una solución integral y moderna centrada exclusivamente en el flamenco.</p>
+            <div class="table-container">
+                <table class="competitor-table">
+                    <thead>
+                        <tr>
+                            <th>Característica</th>
+                            <th>Portales Genéricos (TripAdvisor, etc.)</th>
+                            <th>Webs Institucionales</th>
+                            <th>Agendas Locales</th>
+                            <th>Duende Finder</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Foco 100% Flamenco</td>
+                            <td><i class="fas fa-times-circle"></i></td>
+                            <td><i class="fas fa-times-circle"></i></td>
+                            <td><i class="fas fa-check-circle"></i></td>
+                            <td class="nuestro-producto"><i class="fas fa-check-circle"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Agenda Centralizada y Actualizada</td>
+                            <td><i class="fas fa-times-circle"></i></td>
+                            <td><i class="fas fa-times-circle"></i></td>
+                            <td><i class="fas fa-times-circle"></i></td>
+                            <td class="nuestro-producto"><i class="fas fa-check-circle"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Planificación con IA</td>
+                            <td><i class="fas fa-times-circle"></i></td>
+                            <td><i class="fas fa-times-circle"></i></td>
+                            <td><i class="fas fa-times-circle"></i></td>
+                            <td class="nuestro-producto"><i class="fas fa-check-circle"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Experiencia Móvil Óptima</td>
+                            <td><i class="fas fa-check-circle"></i></td>
+                            <td><i class="fas fa-times-circle"></i></td>
+                            <td><i class="fas fa-times-circle"></i></td>
+                            <td class="nuestro-producto"><i class="fas fa-check-circle"></i></td>
+                        </tr>
+                         <tr>
+                            <td>Generación de Datos de Valor</td>
+                            <td><i class="fas fa-times-circle"></i></td>
+                            <td><i class="fas fa-times-circle"></i></td>
+                            <td><i class="fas fa-times-circle"></i></td>
+                            <td class="nuestro-producto"><i class="fas fa-check-circle"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="opportunity" class="opportunity-section">
+        <div class="container">
+            <h2>La Oportunidad: Un Nicho por Digitalizar</h2>
+            <p style="max-width: 700px; margin: 0 auto 40px auto;">Existe una brecha evidente entre un mercado turístico masivo y digitalizado y una oferta cultural flamenca fragmentada y anclada en herramientas del pasado. Duende Finder nace para cerrar esa brecha.</p>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Atraer al Turista de Alto Valor</h3>
+                    <p>Nos dirigimos al turista cultural, con mayor poder adquisitivo y que busca experiencias auténticas, no solo un espectáculo.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Capitalizar el Canal Móvil</h3>
+                    <p>Ofrecemos una plataforma nativa digital en el canal donde el turista moderno toma sus decisiones de ocio y consumo.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Innovar con IA</h3>
+                    <p>Vamos más allá de una simple agenda, creando valor añadido con la planificación inteligente de experiencias completas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <section id="ai-examples" class="ai-examples-section">
         <div class="container">
             <h2>Descubre el Poder de Nuestra IA</h2>
@@ -365,35 +550,6 @@
             </div>
         </div>
     </section>
-
-    <section id="impact" class="impact-section">
-        <div class="container">
-            <h2>Un Motor para la Economía Local</h2>
-            <div class="impact-grid">
-                <div class="impact-step">
-                    <i class="fas fa-user-check"></i>
-                    <h3>Turista Conectado</h3>
-                    <p>Encuentra y planifica su experiencia flamenca ideal en segundos.</p>
-                </div>
-                <div class="impact-step">
-                    <i class="fas fa-brain"></i>
-                    <h3>Planificación con IA</h3>
-                    <p>Recibe un plan completo: evento, cena, transporte y contexto cultural.</p>
-                </div>
-                <div class="impact-step">
-                    <i class="fas fa-utensils"></i>
-                    <h3>Aumento del Gasto</h3>
-                    <p>El turista consume más en tablaos, restaurantes y comercios locales.</p>
-                </div>
-                <div class="impact-step">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Datos Estratégicos</h3>
-                    <p>Se generan datos de valor para optimizar la oferta turística de la región.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
 
     <section id="caracteristicas" class="container">
         <h2>Una Herramienta Única para el Viajero Moderno</h2>
@@ -457,8 +613,7 @@
     </footer>
 
     <script>
-        // Script vacío, ya que la funcionalidad de cambio de imagen fue eliminada.
-        // Se puede dejar así o eliminar la etiqueta <script> por completo.
+        // No se necesita JavaScript para esta versión de la página.
     </script>
 
 </body>
