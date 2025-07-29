@@ -238,6 +238,7 @@
             font-size: 1.2rem;
             margin-bottom: 5px;
         }
+        
         .comparison-box,
         .example-card,
         .feature-item,
@@ -385,7 +386,7 @@
         }
 
         @media (max-width: 768px) {
-             .impact-grid {
+            .impact-grid {
                 gap: 50px;
             }
             .impact-step:not(:last-child)::after {
@@ -396,6 +397,52 @@
             }
             .mobile-only-button {
                 display: inline-block;
+            }
+            
+            /* --- CSS para transformar la tabla en tarjetas en móvil --- */
+            .competitor-table thead {
+                display: none;
+            }
+            .competitor-table, .competitor-table tbody, .competitor-table tr, .competitor-table td {
+                display: block;
+                width: 100%;
+            }
+            .competitor-table tr {
+                margin-bottom: 25px;
+                border: 1px solid #e0e0e0;
+                border-radius: 8px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            }
+            .competitor-table tr:last-child {
+                margin-bottom: 0;
+            }
+            .competitor-table td:first-child {
+                background-color: #f4f4f5;
+                font-weight: bold;
+                font-size: 1.1rem;
+                text-align: center;
+                padding: 15px;
+                border-bottom: 1px solid #e0e0e0;
+            }
+            .competitor-table td {
+                text-align: right;
+                padding: 12px 15px;
+                position: relative;
+                border-bottom: none;
+            }
+            .competitor-table td:last-child {
+                border-bottom: none;
+            }
+            .competitor-table td:not(:first-child)::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 15px;
+                font-weight: normal;
+                color: #52525b;
+            }
+            .competitor-table td.nuestro-producto::before {
+                font-weight: bold;
+                color: #16a34a;
             }
         }
     </style>
@@ -497,38 +544,38 @@
                     <tbody>
                         <tr>
                             <td>Foco 100% Flamenco</td>
-                            <td><i class="fas fa-times-circle"></i></td>
-                            <td><i class="fas fa-times-circle"></i></td>
-                            <td><i class="fas fa-check-circle"></i></td>
-                            <td class="nuestro-producto"><i class="fas fa-check-circle"></i></td>
+                            <td data-label="Portales Genéricos"><i class="fas fa-times-circle"></i></td>
+                            <td data-label="Webs Institucionales"><i class="fas fa-times-circle"></i></td>
+                            <td data-label="Agendas Locales"><i class="fas fa-check-circle"></i></td>
+                            <td data-label="Duende Finder" class="nuestro-producto"><i class="fas fa-check-circle"></i></td>
                         </tr>
                         <tr>
                             <td>Agenda Centralizada y Actualizada</td>
-                            <td><i class="fas fa-times-circle"></i></td>
-                            <td><i class="fas fa-times-circle"></i></td>
-                            <td><i class="fas fa-times-circle"></i></td>
-                            <td class="nuestro-producto"><i class="fas fa-check-circle"></i></td>
+                            <td data-label="Portales Genéricos"><i class="fas fa-times-circle"></i></td>
+                            <td data-label="Webs Institucionales"><i class="fas fa-times-circle"></i></td>
+                            <td data-label="Agendas Locales"><i class="fas fa-times-circle"></i></td>
+                            <td data-label="Duende Finder" class="nuestro-producto"><i class="fas fa-check-circle"></i></td>
                         </tr>
                         <tr>
                             <td>Planificación con IA</td>
-                            <td><i class="fas fa-times-circle"></i></td>
-                            <td><i class="fas fa-times-circle"></i></td>
-                            <td><i class="fas fa-times-circle"></i></td>
-                            <td class="nuestro-producto"><i class="fas fa-check-circle"></i></td>
+                            <td data-label="Portales Genéricos"><i class="fas fa-times-circle"></i></td>
+                            <td data-label="Webs Institucionales"><i class="fas fa-times-circle"></i></td>
+                            <td data-label="Agendas Locales"><i class="fas fa-times-circle"></i></td>
+                            <td data-label="Duende Finder" class="nuestro-producto"><i class="fas fa-check-circle"></i></td>
                         </tr>
                         <tr>
                             <td>Experiencia Móvil Óptima</td>
-                            <td><i class="fas fa-check-circle"></i></td>
-                            <td><i class="fas fa-times-circle"></i></td>
-                            <td><i class="fas fa-times-circle"></i></td>
-                            <td class="nuestro-producto"><i class="fas fa-check-circle"></i></td>
+                            <td data-label="Portales Genéricos"><i class="fas fa-check-circle"></i></td>
+                            <td data-label="Webs Institucionales"><i class="fas fa-times-circle"></i></td>
+                            <td data-label="Agendas Locales"><i class="fas fa-times-circle"></i></td>
+                            <td data-label="Duende Finder" class="nuestro-producto"><i class="fas fa-check-circle"></i></td>
                         </tr>
                          <tr>
                             <td>Generación de Datos de Valor</td>
-                            <td><i class="fas fa-times-circle"></i></td>
-                            <td><i class="fas fa-times-circle"></i></td>
-                            <td><i class="fas fa-times-circle"></i></td>
-                            <td class="nuestro-producto"><i class="fas fa-check-circle"></i></td>
+                            <td data-label="Portales Genéricos"><i class="fas fa-times-circle"></i></td>
+                            <td data-label="Webs Institucionales"><i class="fas fa-times-circle"></i></td>
+                            <td data-label="Agendas Locales"><i class="fas fa-times-circle"></i></td>
+                            <td data-label="Duende Finder" class="nuestro-producto"><i class="fas fa-check-circle"></i></td>
                         </tr>
                     </tbody>
                 </table>
@@ -653,11 +700,11 @@
         document.addEventListener('DOMContentLoaded', () => {
             const sliderViewport = document.querySelector('.slider-viewport');
             const track = document.querySelector('.slider-track');
-            if (!sliderViewport || !track) return; // Salir si no se encuentra el slider
+            if (!sliderViewport || !track) return;
             
             const slides = Array.from(track.children);
             const pagination = document.querySelector('.slider-pagination');
-            if (slides.length === 0) return; // Salir si no hay slides
+            if (slides.length === 0) return;
 
             const slideWidth = slides[0].getBoundingClientRect().width;
             let currentIndex = 0;
@@ -724,7 +771,10 @@
             }
             
             function goToSlide(index) {
-                currentTranslate = index * -slideWidth;
+                // Para que el slider funcione correctamente en diferentes tamaños de pantalla, 
+                // recalculamos el ancho del slide justo antes de movernos.
+                const newSlideWidth = sliderViewport.getBoundingClientRect().width;
+                currentTranslate = index * -newSlideWidth;
                 prevTranslate = currentTranslate;
                 currentIndex = index;
                 setSliderPosition();
@@ -735,6 +785,11 @@
                 dots.forEach(dot => dot.classList.remove('active'));
                 dots[currentIndex].classList.add('active');
             }
+
+            // Un listener para re-calcular el ancho si cambia el tamaño de la ventana
+            window.addEventListener('resize', () => {
+                goToSlide(currentIndex);
+            });
         });
     </script>
 
