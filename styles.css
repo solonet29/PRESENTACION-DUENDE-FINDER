@@ -471,7 +471,7 @@ footer a:hover {
         display: inline-block;
     }
     
-    /* --- CORRECCIÓN VISUAL PARA LA TABLA EN MÓVILES --- */
+    /* --- CORRECCIÓN DEFINITIVA PARA LA TABLA EN MÓVILES --- */
     .competitor-table thead {
         display: none;
     }
@@ -505,18 +505,18 @@ footer a:hover {
         border-bottom: none;
     }
     .competitor-table td:not(:first-child) {
-        text-align: left;
+        text-align: left; /* Alineamos todo a la izquierda */
     }
     .competitor-table td:not(:first-child)::before {
         content: attr(data-label);
         font-weight: normal;
         color: #52525b;
-        margin-right: 15px;
-        display: inline-block;
+        margin-right: 1em; /* Espacio entre el texto y el icono */
+        vertical-align: middle;
     }
     .competitor-table td:not(:first-child) i {
-        float: right; /* Alinea el icono a la derecha */
-        margin-top: 2px;
+        vertical-align: middle;
+        /* Se elimina el 'float: right' para que se quede junto al texto */
     }
     .competitor-table td.nuestro-producto::before {
         font-weight: bold;
