@@ -130,11 +130,11 @@
             top: 2px;
         }
         .old-way ul li::before {
-            content: "\f00d"; /* Icono de X */
+            content: "\f00d";
             color: #d9534f;
         }
         .new-way ul li::before {
-            content: "\f00c"; /* Icono de check */
+            content: "\f00c";
             color: #16a34a;
         }
         .pilot-section {
@@ -154,6 +154,7 @@
         footer a:hover {
             text-decoration: underline;
         }
+
         .live-demo-section {
             background-color: #ffffff;
         }
@@ -189,6 +190,7 @@
             height: 100%; 
             border: none;
         }
+        
         .ai-examples-section {
             background-color: #ffffff;
         }
@@ -213,6 +215,7 @@
             margin-top: 0;
             margin-bottom: 10px;
         }
+        
         .impact-section {
             background-color: #e0e0e0;
         }
@@ -235,24 +238,6 @@
             font-size: 1.2rem;
             margin-bottom: 5px;
         }
-        @media (min-width: 769px) {
-            .impact-step:not(:last-child)::after {
-                content: '\f061';
-                font-family: "Font Awesome 6 Free";
-                font-weight: 900;
-                position: absolute;
-                top: 30%;
-                right: -25px;
-                transform: translateY(-50%);
-                font-size: 1.5rem;
-                color: #52525b;
-            }
-        }
-        @media (max-width: 768px) {
-             .impact-grid {
-                gap: 50px;
-            }
-        }
         .comparison-box,
         .example-card,
         .feature-item,
@@ -261,7 +246,8 @@
         }
         .comparison-box:hover,
         .example-card:hover,
-        .feature-item:hover {
+        .feature-item:hover,
+        .partner-benefit:hover {
             transform: translateY(-8px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
@@ -392,6 +378,26 @@
         .pagination-dot.active {
             background-color: #3DDC84;
         }
+        
+        .mobile-only-button {
+            display: none;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+             .impact-grid {
+                gap: 50px;
+            }
+            .impact-step:not(:last-child)::after {
+                display: none;
+            }
+            .phone-mockup {
+                display: none;
+            }
+            .mobile-only-button {
+                display: inline-block;
+            }
+        }
     </style>
 </head>
 <body>
@@ -440,6 +446,7 @@
                     <iframe src="https://buscador.afland.es"></iframe>
                 </div>
             </div>
+            <a href="https://buscador.afland.es" target="_blank" rel="noopener noreferrer" class="cta-button mobile-only-button">Ir al Buscador en Tiempo Real</a>
         </div>
     </section>
     
@@ -601,7 +608,6 @@
         <div class="container">
             <h2>Un Socio Estratégico para la Promoción de Andalucía</h2>
             <p style="max-width: 700px; margin: 0 auto 40px auto;">Duende Finder es más que una app; es un canal directo para potenciar el turismo de alto valor y dinamizar la economía local.</p>
-
             <div class="slider-container">
                 <div class="slider-viewport">
                     <div class="slider-track">
@@ -647,9 +653,12 @@
         document.addEventListener('DOMContentLoaded', () => {
             const sliderViewport = document.querySelector('.slider-viewport');
             const track = document.querySelector('.slider-track');
+            if (!sliderViewport || !track) return; // Salir si no se encuentra el slider
+            
             const slides = Array.from(track.children);
             const pagination = document.querySelector('.slider-pagination');
-            if (!sliderViewport) return;
+            if (slides.length === 0) return; // Salir si no hay slides
+
             const slideWidth = slides[0].getBoundingClientRect().width;
             let currentIndex = 0;
             let isDragging = false;
