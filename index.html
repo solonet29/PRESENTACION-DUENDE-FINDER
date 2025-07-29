@@ -8,826 +8,323 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f5;
-            color: #18181b;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1598793526280-d1cf20b4f848?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            color: #ffffff;
-            padding: 80px 20px;
-            text-align: center;
-            position: relative;
-        }
-        header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            margin: 0;
-            color: #3DDC84;
-        }
-        header p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 15px auto 30px auto;
-        }
-        .header-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .cta-button {
-            display: inline-block;
-            background-color: #3DDC84;
-            color: #121212;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 50px;
-            transition: transform 0.2s ease, background-color 0.2s ease;
-        }
-        .cta-button:hover {
-            transform: scale(1.05);
-        }
-        .cta-button.secondary {
-            background-color: transparent;
-            color: #3DDC84;
-            border: 2px solid #3DDC84;
-        }
-        section {
-            padding: 60px 20px;
-            text-align: center;
-        }
-        section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-        }
-        .features-grid, .partners-grid, .comparison-grid, .examples-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            text-align: left;
-        }
-        .feature-item i {
-            font-size: 2.5rem;
-            color: #16a34a;
-            margin-bottom: 15px;
-        }
-        .feature-item h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-        .partners-section {
-            background-color: #e0e0e0;
-        }
-        .partner-benefit {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-        .comparison-box {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 8px;
-            border: 2px solid #e0e0e0;
-        }
-        .comparison-box.new-way {
-            border-color: #3DDC84;
-        }
-        .comparison-box h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            margin-top: 0;
-        }
-        .comparison-box ul {
-            list-style: none;
-            padding: 0;
-        }
-        .comparison-box ul li {
-            padding-left: 25px;
-            position: relative;
-            margin-bottom: 10px;
-        }
-        .comparison-box ul li::before {
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            top: 2px;
-        }
-        .old-way ul li::before {
-            content: "\f00d";
-            color: #d9534f;
-        }
-        .new-way ul li::before {
-            content: "\f00c";
-            color: #16a34a;
-        }
-        .pilot-section {
-            background-color: #18181b;
-            color: #ffffff;
-        }
-        footer {
-            background-color: #121212;
-            color: #a0a0a0;
-            text-align: center;
-            padding: 30px 20px;
-        }
-        footer a {
-            color: #3DDC84;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-        .live-demo-section {
-            background-color: #ffffff;
-        }
-        .phone-mockup {
-            background: #18181b;
-            border: 10px solid #18181b;
-            border-radius: 40px;
-            padding: 20px 10px 10px 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            position: relative;
-            max-width: 420px;
-            margin: 0 auto;
-        }
-        .phone-mockup::before {
-            content: '';
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 5px;
-            border-radius: 5px;
-            background-color: #444; 
-        }
-        .phone-screen {
-            background: #fff;
-            border-radius: 30px;
-            overflow: hidden;
-            height: 750px;
-        }
-        .phone-screen iframe {
-            width: 100%; 
-            height: 100%; 
-            border: none;
-        }
-        .ai-examples-section {
-            background-color: #ffffff;
-        }
-        .example-card {
-            background-color: #f4f4f5;
-            border: 1px solid #e0e0e0;
-            border-radius: 12px;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-        }
-        .example-prompt {
-            font-style: italic;
-            color: #52525b;
-            border-left: 3px solid #3DDC84;
-            padding-left: 15px;
-            margin-bottom: 20px;
-        }
-        .example-result h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-        .impact-section {
-            background-color: #e0e0e0;
-        }
-        .impact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            align-items: center;
-        }
-        .impact-step {
-            text-align: center;
-            position: relative;
-        }
-        .impact-step i {
-            font-size: 3rem;
-            color: #16a34a;
-            margin-bottom: 15px;
-        }
-        .impact-step h3 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-        .comparison-box,
-        .example-card,
-        .feature-item,
-        .partner-benefit {
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-        .comparison-box:hover,
-        .example-card:hover,
-        .feature-item:hover,
-        .partner-benefit:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        .stats-section {
-            background-color: #e0e0e0;
-        }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            align-items: center;
-        }
-        .stat-item {
-            text-align: center;
-        }
-        .stat-circle {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 5px solid #3DDC84;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px auto;
-            background-color: #ffffff;
-            transition: transform 0.3s ease;
-        }
-        .stat-circle:hover {
-            transform: scale(1.05);
-        }
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #16a34a;
-            line-height: 1;
-        }
-        .stat-label {
-            font-size: 1rem;
-            font-weight: 700;
-            margin-top: 5px;
-            color: #18181b;
-        }
-        .competitor-table-section {
-            background-color: #ffffff;
-        }
-        .table-container {
-            overflow-x: auto;
-            margin-top: 20px;
-        }
-        .competitor-table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 600px;
-        }
-        .competitor-table th, .competitor-table td {
-            padding: 15px;
-            text-align: center;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        .competitor-table th {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            background-color: #f4f4f5;
-        }
-        .competitor-table td:first-child {
-            text-align: left;
-            font-weight: 700;
-        }
-        .competitor-table .fa-check-circle {
-            color: #16a34a;
-            font-size: 1.5rem;
-        }
-        .competitor-table .fa-times-circle {
-            color: #d9534f;
-            font-size: 1.5rem;
-        }
-        .competitor-table .nuestro-producto {
-            background-color: #e8f5e9;
-        }
-        .competitor-table .nuestro-producto td:first-child {
-            color: #16a34a;
-        }
-        .opportunity-section {
-             background-color: #18181b;
-             color: #ffffff;
-        }
-        .opportunity-section h2 {
-            color: #3DDC84;
-        }
-        .opportunity-section .features-grid .feature-item i {
-            color: #3DDC84;
-        }
-        .slider-container {
-            position: relative;
-        }
-        .slider-viewport {
-            overflow: hidden;
-            cursor: grab;
-        }
-        .slider-viewport.grabbing {
-            cursor: grabbing;
-        }
-        .slider-track {
-            display: flex;
-            transition: transform 0.4s ease-out;
-        }
-        .partners-section .partner-benefit {
-            width: 100%;
-            flex-shrink: 0;
-            padding: 30px;
-            box-sizing: border-box;
-        }
-        .slider-pagination {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 25px;
-        }
-        .pagination-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: #c4c4c4;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .pagination-dot.active {
-            background-color: #3DDC84;
-        }
-        .mobile-only-button {
-            display: none;
-            margin-top: 20px;
-        }
-        .strategic-alliance-section {
-            background-color: #18181b;
-            color: #f4f4f5;
-        }
-        .strategic-alliance-section h2 {
-            color: #3DDC84;
-        }
-        .strategic-alliance-section h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            margin-top: 50px;
-            margin-bottom: 30px;
-            color: #ffffff;
-        }
-        .value-prop-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            text-align: left;
-            margin-bottom: 60px;
-        }
-        .value-prop-card {
-            background-color: #27272a;
-            padding: 30px;
-            border-radius: 8px;
-            border-top: 4px solid #3DDC84;
-        }
-        .value-prop-card i {
-            font-size: 2.5rem;
-            color: #3DDC84;
-            margin-bottom: 15px;
-        }
-        .value-prop-card h4 {
-            font-size: 1.5rem;
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-        .collaboration-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            text-align: left;
-        }
-        .collaboration-card {
-            background-color: #ffffff;
-            color: #18181b;
-            border-radius: 8px;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-        }
-        .collaboration-card h4 {
-            font-size: 1.5rem;
-            color: #16a34a;
-            margin-top: 0;
-        }
-        .collaboration-card ul {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0;
-            flex-grow: 1;
-        }
-        .collaboration-card ul li {
-            padding-left: 25px;
-            position: relative;
-            margin-bottom: 10px;
-        }
-        .collaboration-card ul li::before {
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            content: "\f00c";
-            color: #16a34a;
-            position: absolute;
-            left: 0;
-        }
-        @media (min-width: 769px) {
-            .impact-step:not(:last-child)::after {
-                content: '\f061';
-                font-family: "Font Awesome 6 Free";
-                font-weight: 900;
-                position: absolute;
-                top: 30%;
-                right: -25px;
-                transform: translateY(-50%);
-                font-size: 1.5rem;
-                color: #52525b;
-            }
-        }
-        @media (max-width: 768px) {
-            .impact-grid {
-                gap: 50px;
-            }
-            .impact-step:not(:last-child)::after {
-                display: none;
-            }
-            .phone-mockup {
-                display: none;
-            }
-            .mobile-only-button {
-                display: inline-block;
-            }
-            .competitor-table thead {
-                display: none;
-            }
-            .competitor-table, .competitor-table tbody, .competitor-table tr, .competitor-table td {
-                display: block;
-                width: 100%;
-            }
-            .competitor-table tr {
-                margin-bottom: 25px;
-                border: 1px solid #e0e0e0;
-                border-radius: 8px;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            }
-            .competitor-table tr:last-child {
-                margin-bottom: 0;
-            }
-            .competitor-table td:first-child {
-                background-color: #f4f4f5;
-                font-weight: bold;
-                font-size: 1.1rem;
-                text-align: center;
-                padding: 15px;
-                border-bottom: 1px solid #e0e0e0;
-            }
-            .competitor-table td {
-                text-align: right;
-                padding: 12px 15px;
-                position: relative;
-                border-bottom: none;
-            }
-            .competitor-table td:last-child {
-                border-bottom: none;
-            }
-            .competitor-table td:not(:first-child)::before {
-                content: attr(data-label);
-                position: absolute;
-                left: 15px;
-                font-weight: normal;
-                color: #52525b;
-            }
-            .competitor-table td.nuestro-producto::before {
-                font-weight: bold;
-                color: #16a34a;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <header>
-        <h1>Duende Finder</h1>
-        <p>La herramienta de Inteligencia Artificial de <strong>Andalucia Flamenco Land (afland.es)</strong> para conectar el patrimonio cultural de Andalucía con el turista del siglo XXI.</p>
-        <div class="header-buttons">
-            <a href="https://afland.es" target="_blank" rel="noopener noreferrer" class="cta-button secondary">Ver Proyecto Principal</a>
-            <a href="mailto:hola@solonet.es?subject=Solicitud%20de%20Demostraci%C3%B3n%20-%20Duende%20Finder" class="cta-button">Solicitar una Demostración</a>
+        <div class="container">
+            <h1>Duende Finder</h1>
+            <p>La herramienta de Inteligencia Artificial de <strong>Andalucia Flamenco Land (afland.es)</strong> para conectar el patrimonio cultural de Andalucía con el turista del siglo XXI.</p>
+            <div class="header-buttons">
+                <a href="https://afland.es" target="_blank" rel="noopener noreferrer" class="cta-button secondary">Ver Proyecto Principal</a>
+                <a href="mailto:hola@solonet.es?subject=Solicitud%20de%20Demostraci%C3%B3n%20-%20Duende%20Finder" class="cta-button">Solicitar una Demostración</a>
+            </div>
         </div>
     </header>
 
-    <section id="problema" class="container">
-        <h2>El Estado Actual: Un Potencial Desaprovechado</h2>
-        <div class="comparison-grid">
-            <div class="comparison-box old-way">
-                <h3>La Búsqueda Tradicional</h3>
-                <ul>
-                    <li>Agendas incompletas y dispersas en múltiples portales.</li>
-                    <li>Webs institucionales con información poco especializada.</li>
-                    <li>Experiencias móviles deficientes y poco intuitivas.</li>
-                    <li>Nula ayuda en la planificación más allá del evento.</li>
-                    <li>El turista se frustra, el artista pierde visibilidad.</li>
-                </ul>
+    <main>
+        <section id="problema" class="container">
+            <h2>El Estado Actual: Un Potencial Desaprovechado</h2>
+            <div class="comparison-grid">
+                <div class="comparison-box old-way">
+                    <h3>La Búsqueda Tradicional</h3>
+                    <ul>
+                        <li>Agendas incompletas y dispersas en múltiples portales.</li>
+                        <li>Webs institucionales con información poco especializada.</li>
+                        <li>Experiencias móviles deficientes y poco intuitivas.</li>
+                        <li>Nula ayuda en la planificación más allá del evento.</li>
+                        <li>El turista se frustra, el artista pierde visibilidad.</li>
+                    </ul>
+                </div>
+                <div class="comparison-box new-way">
+                    <h3>La Solución: Duende Finder</h3>
+                    <ul>
+                        <li>Toda la oferta centralizada en una única plataforma.</li>
+                        <li>Filtros inteligentes y una interfaz moderna y rápida.</li>
+                        <li>Diseño "Mobile-First" pensado para el viajero.</li>
+                        <li>Planificación completa de la experiencia con IA.</li>
+                        <li>El turista planifica más, disfruta más y consume más.</li>
+                    </ul>
+                </div>
             </div>
-            <div class="comparison-box new-way">
-                <h3>La Solución: Duende Finder</h3>
-                <ul>
-                    <li>Toda la oferta centralizada en una única plataforma.</li>
-                    <li>Filtros inteligentes y una interfaz moderna y rápida.</li>
-                    <li>Diseño "Mobile-First" pensado para el viajero.</li>
-                    <li>Planificación completa de la experiencia con IA.</li>
-                    <li>El turista planifica más, disfruta más y consume más.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="live-demo" class="live-demo-section">
-        <div class="container">
-            <h2>Pruébalo en Tiempo Real</h2>
-            <p style="max-width: 600px; margin: 0 auto 40px auto;">Interactúa directamente con nuestro buscador. Utiliza los filtros para encontrar eventos por fecha, ciudad o artista y comprueba la potencia y rapidez de nuestra plataforma.</p>
-            <div class="phone-mockup">
-                <div class="phone-screen">
-                    <iframe src="https://buscador.afland.es"></iframe>
+        <section id="live-demo" class="live-demo-section">
+            <div class="container">
+                <h2>Pruébalo en Tiempo Real</h2>
+                <p style="max-width: 600px; margin: 0 auto 40px auto;">Interactúa directamente con nuestro buscador. Utiliza los filtros para encontrar eventos por fecha, ciudad o artista y comprueba la potencia y rapidez de nuestra plataforma.</p>
+                <div class="phone-mockup">
+                    <div class="phone-screen">
+                        <iframe src="https://buscador.afland.es"></iframe>
+                    </div>
+                </div>
+                <a href="https://buscador.afland.es" target="_blank" rel="noopener noreferrer" class="cta-button mobile-only-button">Ir al Buscador en Tiempo Real</a>
+            </div>
+        </section>
+        
+        <section id="market-stats" class="stats-section">
+            <div class="container">
+                <h2>Mercado en Cifras: Un Gigante por Conquistar</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-circle">
+                            <span class="stat-number">+30M</span>
+                            <span class="stat-label">Turistas</span>
+                        </div>
+                        <p>Andalucía recibió más de 30 millones de turistas, batiendo récords históricos.</p>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-circle">
+                            <span class="stat-number">>45%</span>
+                            <span class="stat-label">Busca Cultura</span>
+                        </div>
+                        <p>Más del 45% de los visitantes realizan actividades culturales durante su estancia.</p>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-circle">
+                            <span class="stat-number">>80%</span>
+                            <span class="stat-label">Usa el Móvil</span>
+                        </div>
+                        <p>El turista moderno planifica y reserva sus experiencias principalmente a través del móvil.</p>
+                    </div>
                 </div>
             </div>
-            <a href="https://buscador.afland.es" target="_blank" rel="noopener noreferrer" class="cta-button mobile-only-button">Ir al Buscador en Tiempo Real</a>
-        </div>
-    </section>
-    
-    <section id="market-stats" class="stats-section">
-        <div class="container">
-            <h2>Mercado en Cifras: Un Gigante por Conquistar</h2>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-circle">
-                        <span class="stat-number">+30M</span>
-                        <span class="stat-label">Turistas</span>
-                    </div>
-                    <p>Andalucía recibió más de 30 millones de turistas, batiendo récords históricos.</p>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-circle">
-                        <span class="stat-number">>45%</span>
-                        <span class="stat-label">Busca Cultura</span>
-                    </div>
-                    <p>Más del 45% de los visitantes realizan actividades culturales durante su estancia.</p>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-circle">
-                        <span class="stat-number">>80%</span>
-                        <span class="stat-label">Usa el Móvil</span>
-                    </div>
-                    <p>El turista moderno planifica y reserva sus experiencias principalmente a través del móvil.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="competitors" class="competitor-table-section">
-        <div class="container">
-            <h2>Análisis de la Competencia</h2>
-            <p style="max-width: 700px; margin: 0 auto 40px auto;">Las herramientas actuales son generalistas o están obsoletas. Ninguna ofrece una solución integral y moderna centrada exclusivamente en el flamenco.</p>
-            <div class="table-container">
-                <table class="competitor-table">
-                    <thead>
-                        <tr>
-                            <th>Característica</th>
-                            <th>Portales Genéricos (TripAdvisor, etc.)</th>
-                            <th>Webs Institucionales</th>
-                            <th>Agendas Locales</th>
-                            <th>Duende Finder</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Foco 100% Flamenco</td>
-                            <td data-label="Portales Genéricos"><i class="fas fa-times-circle"></i></td>
-                            <td data-label="Webs Institucionales"><i class="fas fa-times-circle"></i></td>
-                            <td data-label="Agendas Locales"><i class="fas fa-check-circle"></i></td>
-                            <td data-label="Duende Finder" class="nuestro-producto"><i class="fas fa-check-circle"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Agenda Centralizada y Actualizada</td>
-                            <td data-label="Portales Genéricos"><i class="fas fa-times-circle"></i></td>
-                            <td data-label="Webs Institucionales"><i class="fas fa-times-circle"></i></td>
-                            <td data-label="Agendas Locales"><i class="fas fa-times-circle"></i></td>
-                            <td data-label="Duende Finder" class="nuestro-producto"><i class="fas fa-check-circle"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Planificación con IA</td>
-                            <td data-label="Portales Genéricos"><i class="fas fa-times-circle"></i></td>
-                            <td data-label="Webs Institucionales"><i class="fas fa-times-circle"></i></td>
-                            <td data-label="Agendas Locales"><i class="fas fa-times-circle"></i></td>
-                            <td data-label="Duende Finder" class="nuestro-producto"><i class="fas fa-check-circle"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Experiencia Móvil Óptima</td>
-                            <td data-label="Portales Genéricos"><i class="fas fa-check-circle"></i></td>
-                            <td data-label="Webs Institucionales"><i class="fas fa-times-circle"></i></td>
-                            <td data-label="Agendas Locales"><i class="fas fa-times-circle"></i></td>
-                            <td data-label="Duende Finder" class="nuestro-producto"><i class="fas fa-check-circle"></i></td>
-                        </tr>
-                         <tr>
-                            <td>Generación de Datos de Valor</td>
-                            <td data-label="Portales Genéricos"><i class="fas fa-times-circle"></i></td>
-                            <td data-label="Webs Institucionales"><i class="fas fa-times-circle"></i></td>
-                            <td data-label="Agendas Locales"><i class="fas fa-times-circle"></i></td>
-                            <td data-label="Duende Finder" class="nuestro-producto"><i class="fas fa-check-circle"></i></td>
-                        </tr>
-                    </tbody>
-                </table>
+        <section id="competitors" class="competitor-table-section">
+            <div class="container">
+                <h2>Análisis de la Competencia</h2>
+                <p style="max-width: 700px; margin: 0 auto 40px auto;">Las herramientas actuales son generalistas o están obsoletas. Ninguna ofrece una solución integral y moderna centrada exclusivamente en el flamenco.</p>
+                <div class="table-container">
+                    <table class="competitor-table">
+                        <thead>
+                            <tr>
+                                <th>Característica</th>
+                                <th>Portales Genéricos (TripAdvisor, etc.)</th>
+                                <th>Webs Institucionales</th>
+                                <th>Agendas Locales</th>
+                                <th>Duende Finder</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Foco 100% Flamenco</td>
+                                <td data-label="Portales Genéricos"><i class="fas fa-times-circle"></i></td>
+                                <td data-label="Webs Institucionales"><i class="fas fa-times-circle"></i></td>
+                                <td data-label="Agendas Locales"><i class="fas fa-check-circle"></i></td>
+                                <td data-label="Duende Finder" class="nuestro-producto"><i class="fas fa-check-circle"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Agenda Centralizada y Actualizada</td>
+                                <td data-label="Portales Genéricos"><i class="fas fa-times-circle"></i></td>
+                                <td data-label="Webs Institucionales"><i class="fas fa-times-circle"></i></td>
+                                <td data-label="Agendas Locales"><i class="fas fa-times-circle"></i></td>
+                                <td data-label="Duende Finder" class="nuestro-producto"><i class="fas fa-check-circle"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Planificación con IA</td>
+                                <td data-label="Portales Genéricos"><i class="fas fa-times-circle"></i></td>
+                                <td data-label="Webs Institucionales"><i class="fas fa-times-circle"></i></td>
+                                <td data-label="Agendas Locales"><i class="fas fa-times-circle"></i></td>
+                                <td data-label="Duende Finder" class="nuestro-producto"><i class="fas fa-check-circle"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Experiencia Móvil Óptima</td>
+                                <td data-label="Portales Genéricos"><i class="fas fa-check-circle"></i></td>
+                                <td data-label="Webs Institucionales"><i class="fas fa-times-circle"></i></td>
+                                <td data-label="Agendas Locales"><i class="fas fa-times-circle"></i></td>
+                                <td data-label="Duende Finder" class="nuestro-producto"><i class="fas fa-check-circle"></i></td>
+                            </tr>
+                             <tr>
+                                <td>Generación de Datos de Valor</td>
+                                <td data-label="Portales Genéricos"><i class="fas fa-times-circle"></i></td>
+                                <td data-label="Webs Institucionales"><i class="fas fa-times-circle"></i></td>
+                                <td data-label="Agendas Locales"><i class="fas fa-times-circle"></i></td>
+                                <td data-label="Duende Finder" class="nuestro-producto"><i class="fas fa-check-circle"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="opportunity" class="opportunity-section">
-        <div class="container">
-            <h2>La Oportunidad: Un Nicho por Digitalizar</h2>
-            <p style="max-width: 700px; margin: 0 auto 40px auto;">Existe una brecha evidente entre un mercado turístico masivo y digitalizado y una oferta cultural flamenca fragmentada y anclada en herramientas del pasado. Duende Finder nace para cerrar esa brecha.</p>
+        <section id="opportunity" class="opportunity-section">
+            <div class="container">
+                <h2>La Oportunidad: Un Nicho por Digitalizar</h2>
+                <p style="max-width: 700px; margin: 0 auto 40px auto;">Existe una brecha evidente entre un mercado turístico masivo y digitalizado y una oferta cultural flamenca fragmentada y anclada en herramientas del pasado. Duende Finder nace para cerrar esa brecha.</p>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-user-tie"></i>
+                        <h3>Atraer al Turista de Alto Valor</h3>
+                        <p>Nos dirigimos al turista cultural, con mayor poder adquisitivo y que busca experiencias auténticas, no solo un espectáculo.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Capitalizar el Canal Móvil</h3>
+                        <p>Ofrecemos una plataforma nativa digital en el canal donde el turista moderno toma sus decisiones de ocio y consumo.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Innovar con IA</h3>
+                        <p>Vamos más allá de una simple agenda, creando valor añadido con la planificación inteligente de experiencias completas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="ai-examples" class="ai-examples-section">
+            <div class="container">
+                <h2>Descubre el Poder de Nuestra IA</h2>
+                <p style="max-width: 700px; margin: 0 auto 40px auto;">Te mostramos ejemplos reales del tipo de experiencias únicas y rutas culturales que nuestra tecnología puede diseñar para enriquecer la oferta turística de Andalucía.</p>
+                <div class="examples-grid">
+                    <div class="example-card">
+                        <div class="example-prompt">"Ruta de la Bulería en Jerez"</div>
+                        <div class="example-result">
+                            <h4>Ruta "Compás de Jerez"</h4>
+                            <p>Un itinerario de día completo que explora los barrios de Santiago y San Miguel, cuna de la bulería. Incluye una visita guiada por los monumentos de Lola Flores y La Paquera, un taller de palmas en una peña local y culmina con una cena-espectáculo en un tabanco tradicional para vivir el flamenco más auténtico.</p>
+                        </div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-prompt">"Federico García Lorca y el Flamenco en Granada"</div>
+                        <div class="example-result">
+                            <h4>Paseo "Poeta en el Sacromonte"</h4>
+                            <p>Una experiencia vespertina que conecta la poesía de Lorca con el duende de las zambras gitanas. El recorrido comienza en el mirador de San Nicolás, con lecturas de poemas, y desciende hacia una cueva del Sacromonte para un espectáculo de flamenco íntimo, explicando la conexión del poeta con el Cante Jondo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="caracteristicas" class="container">
+            <h2>Una Herramienta Única para el Viajero Moderno</h2>
             <div class="features-grid">
                 <div class="feature-item">
-                    <i class="fas fa-user-tie"></i>
-                    <h3>Atraer al Turista de Alto Valor</h3>
-                    <p>Nos dirigimos al turista cultural, con mayor poder adquisitivo y que busca experiencias auténticas, no solo un espectáculo.</p>
+                    <i class="fas fa-search-location"></i>
+                    <h3>Agenda Centralizada e Inteligente</h3>
+                    <p>Acceso a cientos de eventos en toda Europa, con filtros potentes que permiten encontrar el espectáculo perfecto por artista, ciudad o fecha en segundos.</p>
                 </div>
                 <div class="feature-item">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>Capitalizar el Canal Móvil</h3>
-                    <p>Ofrecemos una plataforma nativa digital en el canal donde el turista moderno toma sus decisiones de ocio y consumo.</p>
+                    <i class="fas fa-brain"></i>
+                    <h3>"Planear Noche" con IA</h3>
+                    <p>Nuestra IA no solo encuentra un evento, crea una experiencia. Genera una guía personalizada con recomendaciones de tapas, datos culturales y consejos prácticos para una noche redonda.</p>
                 </div>
                 <div class="feature-item">
-                    <i class="fas fa-lightbulb"></i>
-                    <h3>Innovar con IA</h3>
-                    <p>Vamos más allá de una simple agenda, creando valor añadido con la planificación inteligente de experiencias completas.</p>
+                    <i class="fas fa-route"></i>
+                    <h3>Itinerarios de Viaje a Medida</h3>
+                    <p>El usuario introduce un destino y unas fechas, y nuestra IA diseña un itinerario de viaje flamenco, sugiriendo eventos y actividades culturales para cada día.</p>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <section id="ai-examples" class="ai-examples-section">
-        <div class="container">
-            <h2>Descubre el Poder de Nuestra IA</h2>
-            <p style="max-width: 700px; margin: 0 auto 40px auto;">Te mostramos ejemplos reales del tipo de experiencias únicas y rutas culturales que nuestra tecnología puede diseñar para enriquecer la oferta turística de Andalucía.</p>
-            <div class="examples-grid">
-                <div class="example-card">
-                    <div class="example-prompt">"Ruta de la Bulería en Jerez"</div>
-                    <div class="example-result">
-                        <h4>Ruta "Compás de Jerez"</h4>
-                        <p>Un itinerario de día completo que explora los barrios de Santiago y San Miguel, cuna de la bulería. Incluye una visita guiada por los monumentos de Lola Flores y La Paquera, un taller de palmas en una peña local y culmina con una cena-espectáculo en un tabanco tradicional para vivir el flamenco más auténtico.</p>
-                    </div>
-                </div>
-                <div class="example-card">
-                    <div class="example-prompt">"Federico García Lorca y el Flamenco en Granada"</div>
-                    <div class="example-result">
-                        <h4>Paseo "Poeta en el Sacromonte"</h4>
-                        <p>Una experiencia vespertina que conecta la poesía de Lorca con el duende de las zambras gitanas. El recorrido comienza en el mirador de San Nicolás, con lecturas de poemas, y desciende hacia una cueva del Sacromonte para un espectáculo de flamenco íntimo, explicando la conexión del poeta con el Cante Jondo.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="caracteristicas" class="container">
-        <h2>Una Herramienta Única para el Viajero Moderno</h2>
-        <div class="features-grid">
-            <div class="feature-item">
-                <i class="fas fa-search-location"></i>
-                <h3>Agenda Centralizada e Inteligente</h3>
-                <p>Acceso a cientos de eventos en toda Europa, con filtros potentes que permiten encontrar el espectáculo perfecto por artista, ciudad o fecha en segundos.</p>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-brain"></i>
-                <h3>"Planear Noche" con IA</h3>
-                <p>Nuestra IA no solo encuentra un evento, crea una experiencia. Genera una guía personalizada con recomendaciones de tapas, datos culturales y consejos prácticos para una noche redonda.</p>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-route"></i>
-                <h3>Itinerarios de Viaje a Medida</h3>
-                <p>El usuario introduce un destino y unas fechas, y nuestra IA diseña un itinerario de viaje flamenco, sugiriendo eventos y actividades culturales para cada día.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="socios" class="partners-section">
-        <div class="container">
-            <h2>Un Socio Estratégico para la Promoción de Andalucía</h2>
-            <p style="max-width: 700px; margin: 0 auto 40px auto;">Duende Finder es más que una app; es un canal directo para potenciar el turismo de alto valor y dinamizar la economía local.</p>
-            <div class="slider-container">
-                <div class="slider-viewport">
-                    <div class="slider-track">
-                        <div class="partner-benefit">
-                            <h3><i class="fas fa-plane-departure"></i> Impulso al Turismo de Calidad</h3>
-                            <p>Atraemos a un turista interesado en la cultura, que planifica su viaje con antelación, alarga su estancia y busca experiencias auténticas, generando un mayor impacto económico.</p>
-                        </div>
-                        <div class="partner-benefit">
-                            <h3><i class="fas fa-bullhorn"></i> Puesta en Valor del Patrimonio</h3>
-                            <p>Digitalizamos y presentamos el flamenco de una forma moderna y accesible a una audiencia global, reforzando la imagen de Andalucía como cuna de un arte universal.</p>
-                        </div>
-                        <div class="partner-benefit">
-                            <h3><i class="fas fa-chart-line"></i> Dinamización de la Economía Local</h3>
-                            <p>Dirigimos activamente a los usuarios a tablaos, peñas, restaurantes y comercios, beneficiando directamente al tejido empresarial local que vive del flamenco y su cultura.</p>
-                        </div>
-                        <div class="partner-benefit">
-                            <h3><i class="fas fa-database"></i> Datos para una Gestión Inteligente</h3>
-                            <p>Ofrecemos la posibilidad de obtener datos anónimos sobre la demanda turística: ¿Qué artistas son los más buscados? ¿Qué ciudades generan más interés? Información clave para la toma de decisiones.</p>
+        <section id="socios" class="partners-section">
+            <div class="container">
+                <h2>Un Socio Estratégico para la Promoción de Andalucía</h2>
+                <p style="max-width: 700px; margin: 0 auto 40px auto;">Duende Finder es más que una app; es un canal directo para potenciar el turismo de alto valor y dinamizar la economía local.</p>
+                <div class="slider-container">
+                    <div class="slider-viewport">
+                        <div class="slider-track">
+                            <div class="partner-benefit">
+                                <h3><i class="fas fa-plane-departure"></i> Impulso al Turismo de Calidad</h3>
+                                <p>Atraemos a un turista interesado en la cultura, que planifica su viaje con antelación, alarga su estancia y busca experiencias auténticas, generando un mayor impacto económico.</p>
+                            </div>
+                            <div class="partner-benefit">
+                                <h3><i class="fas fa-bullhorn"></i> Puesta en Valor del Patrimonio</h3>
+                                <p>Digitalizamos y presentamos el flamenco de una forma moderna y accesible a una audiencia global, reforzando la imagen de Andalucía como cuna de un arte universal.</p>
+                            </div>
+                            <div class="partner-benefit">
+                                <h3><i class="fas fa-chart-line"></i> Dinamización de la Economía Local</h3>
+                                <p>Dirigimos activamente a los usuarios a tablaos, peñas, restaurantes y comercios, beneficiando directamente al tejido empresarial local que vive del flamenco y su cultura.</p>
+                            </div>
+                            <div class="partner-benefit">
+                                <h3><i class="fas fa-database"></i> Datos para una Gestión Inteligente</h3>
+                                <p>Ofrecemos la posibilidad de obtener datos anónimos sobre la demanda turística: ¿Qué artistas son los más buscados? ¿Qué ciudades generan más interés? Información clave para la toma de decisiones.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="slider-pagination"></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="alianza-estrategica" class="strategic-alliance-section">
-        <div class="container">
-            <h2>Una Alianza Estratégica para el Turismo y la Cultura</h2>
-            <p style="max-width: 700px; margin: 0 auto 50px auto;">
-                Duende Finder no es solo una herramienta para el turista; es un potente aliado para las instituciones públicas. Nuestra plataforma ofrece soluciones directas a los retos de la promoción turística en la era digital, generando un impacto medible y positivo en la economía y la cultura de Andalucía.
-            </p>
-
-            <h3>Nuestro Valor Añadido para la Gestión Pública</h3>
-            <div class="value-prop-grid">
-                <div class="value-prop-card">
-                    <i class="fas fa-chart-pie"></i>
-                    <h4>Dashboard de Inteligencia Turística</h4>
-                    <p>Acceda a datos anónimos y agregados para tomar decisiones estratégicas. Identifique qué artistas, palos o ciudades generan más interés, anticipe la demanda y optimice sus campañas de promoción basándose en información real y actualizada.</p>
-                </div>
-                <div class="value-prop-card">
-                    <i class="fas fa-bullseye"></i>
-                    <h4>Promoción de Destinos y Eventos</h4>
-                    <p>Utilice Duende Finder como un canal directo para promocionar festivales provinciales, rutas culturales o destinos menos conocidos. Destaque sus eventos patrocinados ante una audiencia segmentada y altamente interesada en la cultura flamenca.</p>
-                </div>
-                <div class="value-prop-card">
-                    <i class="fas fa-cloud-arrow-up"></i>
-                    <h4>Digitalización del Patrimonio</h4>
-                    <p>Colabore con nosotros para reforzar la imagen de Andalucía como una potencia cultural innovadora. Nuestra plataforma moderniza el acceso al flamenco, preservando su autenticidad y conectándolo con las nuevas generaciones de viajeros digitales.</p>
-                </div>
-                <div class="value-prop-card">
-                    <i class="fas fa-store"></i>
-                    <h4>Impulso Directo a la Economía</h4>
-                    <p>Cada recomendación de nuestra IA (restaurantes, comercios, tablaos) se traduce en un consumo directo en el tejido empresarial local. Fomente un turismo sostenible que distribuye el beneficio económico por todo el territorio.</p>
+                    <div class="slider-pagination"></div>
                 </div>
             </div>
+        </section>
 
-            <h3>Modelos de Colaboración</h3>
-            <div class="collaboration-grid">
-                <div class="collaboration-card">
-                    <h4>Patrocinio Provincial / Regional</h4>
-                    <p>Convierta a su Diputación o Consejería en el socio principal de Duende Finder en su territorio.</p>
-                    <ul>
-                        <li>Branding exclusivo en la app para su provincia/región.</li>
-                        <li>Posicionamiento prioritario de sus eventos y rutas.</li>
-                        <li>Acceso a informes trimestrales de inteligencia turística.</li>
-                        <li>Campañas conjuntas en redes sociales.</li>
-                    </ul>
-                    <a href="mailto:hola@solonet.es?subject=Informaci%C3%B3n%20sobre%20Patrocinio%20Provincial" class="cta-button">Más Información</a>
+        <section id="alianza-estrategica" class="strategic-alliance-section">
+            <div class="container">
+                <h2>Una Alianza Estratégica para el Turismo y la Cultura</h2>
+                <p style="max-width: 700px; margin: 0 auto 50px auto;">
+                    Duende Finder no es solo una herramienta para el turista; es un potente aliado para las instituciones públicas. Nuestra plataforma ofrece soluciones directas a los retos de la promoción turística en la era digital, generando un impacto medible y positivo en la economía y la cultura de Andalucía.
+                </p>
+
+                <h3>Nuestro Valor Añadido para la Gestión Pública</h3>
+                <div class="value-prop-grid">
+                    <div class="value-prop-card">
+                        <i class="fas fa-chart-pie"></i>
+                        <h4>Dashboard de Inteligencia Turística</h4>
+                        <p>Acceda a datos anónimos y agregados para tomar decisiones estratégicas. Identifique qué artistas, palos o ciudades generan más interés, anticipe la demanda y optimice sus campañas de promoción basándose en información real y actualizada.</p>
+                    </div>
+                    <div class="value-prop-card">
+                        <i class="fas fa-bullseye"></i>
+                        <h4>Promoción de Destinos y Eventos</h4>
+                        <p>Utilice Duende Finder como un canal directo para promocionar festivales provinciales, rutas culturales o destinos menos conocidos. Destaque sus eventos patrocinados ante una audiencia segmentada y altamente interesada en la cultura flamenca.</p>
+                    </div>
+                    <div class="value-prop-card">
+                        <i class="fas fa-cloud-arrow-up"></i>
+                        <h4>Digitalización del Patrimonio</h4>
+                        <p>Colabore con nosotros para reforzar la imagen de Andalucía como una potencia cultural innovadora. Nuestra plataforma moderniza el acceso al flamenco, preservando su autenticidad y conectándolo con las nuevas generaciones de viajeros digitales.</p>
+                    </div>
+                    <div class="value-prop-card">
+                        <i class="fas fa-store"></i>
+                        <h4>Impulso Directo a la Economía</h4>
+                        <p>Cada recomendación de nuestra IA (restaurantes, comercios, tablaos) se traduce en un consumo directo en el tejido empresarial local. Fomente un turismo sostenible que distribuye el beneficio económico por todo el territorio.</p>
+                    </div>
+                    <div class="value-prop-card">
+                        <i class="fas fa-leaf"></i>
+                        <h4>Turismo Sostenible y Desestacionalizado</h4>
+                        <p>Ayude a combatir la estacionalidad promocionando eventos en temporada baja. Nuestra plataforma visibiliza la oferta cultural durante todo el año, atrayendo visitantes fuera de los picos de afluencia y fomentando un turismo más sostenible.</p>
+                    </div>
+                    <div class="value-prop-card">
+                        <i class="fas fa-book-open-reader"></i>
+                        <h4>Herramienta Educativa y de Preservación</h4>
+                        <p>Duende Finder actúa como un centro de divulgación, ofreciendo contexto sobre los palos, artistas e historia del flamenco. Educamos al visitante, aumentando su aprecio por el arte y contribuyendo activamente a la preservación del patrimonio inmaterial.</p>
+                    </div>
                 </div>
-                 <div class="collaboration-card">
-                    <h4>Convenio para Eventos Específicos</h4>
-                    <p>Potencie el alcance de sus grandes eventos y festivales (Bienal, Festival de Jerez, etc.).</p>
-                    <ul>
-                        <li>Sección dedicada al evento dentro de la app.</li>
-                        <li>Notificaciones push a los usuarios cercanos.</li>
-                        <li>Integración del programa oficial y venta de entradas.</li>
-                        <li>Menciones como "Evento Recomendado" por la IA.</li>
-                    </ul>
-                    <a href="mailto:hola@solonet.es?subject=Informaci%C3%B3n%20sobre%20Convenio%20para%20Eventos" class="cta-button">Más Información</a>
+
+                <h3>Modelos de Colaboración</h3>
+                <div class="collaboration-grid">
+                    <div class="collaboration-card">
+                        <h4>Patrocinio Provincial / Regional</h4>
+                        <p>Convierta a su Diputación o Consejería en el socio principal de Duende Finder en su territorio.</p>
+                        <ul>
+                            <li>Branding exclusivo en la app para su provincia/región.</li>
+                            <li>Posicionamiento prioritario de sus eventos y rutas.</li>
+                            <li>Acceso a informes trimestrales de inteligencia turística.</li>
+                            <li>Campañas conjuntas en redes sociales.</li>
+                        </ul>
+                        <a href="mailto:hola@solonet.es?subject=Informaci%C3%B3n%20sobre%20Patrocinio%20Provincial" class="cta-button">Más Información</a>
+                    </div>
+                     <div class="collaboration-card">
+                        <h4>Convenio para Eventos Específicos</h4>
+                        <p>Potencie el alcance de sus grandes eventos y festivales (Bienal, Festival de Jerez, etc.).</p>
+                        <ul>
+                            <li>Sección dedicada al evento dentro de la app.</li>
+                            <li>Notificaciones push a los usuarios cercanos.</li>
+                            <li>Integración del programa oficial y venta de entradas.</li>
+                            <li>Menciones como "Evento Recomendado" por la IA.</li>
+                        </ul>
+                        <a href="mailto:hola@solonet.es?subject=Informaci%C3%B3n%20sobre%20Convenio%20para%20Eventos" class="cta-button">Más Información</a>
+                    </div>
                 </div>
+
             </div>
+        </section>
 
-        </div>
-    </section>
-
-    <section id="piloto" class="pilot-section">
-        <div class="container">
-            <h2>Colaboremos: El Proyecto Piloto</h2>
-            <p style="max-width: 700px; margin: 0 auto 30px auto;">Proponemos un modelo de colaboración ágil y medible. Iniciemos con un <strong>proyecto piloto de 6 meses</strong> en su provincia. Le ofrecemos convertir a Duende Finder en la herramienta de promoción flamenca recomendada, destacando sus eventos y obteniendo datos de impacto a cambio de un patrocinio institucional.</p>
-            <a href="mailto:hola@solonet.es?subject=Contacto%20para%20Proyecto%20Piloto%20-%20Duende%20Finder" class="cta-button">Contactar para un Proyecto Piloto</a>
-        </div>
-    </section>
+        <section id="piloto" class="pilot-section">
+            <div class="container">
+                <h2>Colaboremos: El Proyecto Piloto</h2>
+                <p style="max-width: 700px; margin: 0 auto 30px auto;">Proponemos un modelo de colaboración ágil y medible. Iniciemos con un <strong>proyecto piloto de 6 meses</strong> en su provincia. Le ofrecemos convertir a Duende Finder en la herramienta de promoción flamenca recomendada, destacando sus eventos y obteniendo datos de impacto a cambio de un patrocinio institucional.</p>
+                <a href="mailto:hola@solonet.es?subject=Contacto%20para%20Proyecto%20Piloto%20-%20Duende%20Finder" class="cta-button">Contactar para un Proyecto Piloto</a>
+            </div>
+        </section>
+    </main>
 
     <footer id="contacto">
         <div class="container">
@@ -836,128 +333,7 @@
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const sliderContainer = document.querySelector('.slider-container');
-            if (!sliderContainer) return;
-
-            const track = sliderContainer.querySelector('.slider-track');
-            const slides = Array.from(track.children);
-            const pagination = sliderContainer.querySelector('.slider-pagination');
-            const sliderViewport = sliderContainer.querySelector('.slider-viewport');
-            
-            if (!track || !slides.length || !pagination || !sliderViewport) return;
-
-            let currentIndex = 0;
-            let slideWidth = 0;
-            
-            let isDragging = false;
-            let startPos = 0;
-            let currentTranslate = 0;
-            let prevTranslate = 0;
-            
-            function initializeSlider() {
-                updateSlideWidth();
-                createPagination();
-                addEventListeners();
-                goToSlide(0);
-            }
-
-            function updateSlideWidth() {
-                slideWidth = sliderViewport.getBoundingClientRect().width;
-            }
-
-            function createPagination() {
-                pagination.innerHTML = '';
-                slides.forEach((_, index) => {
-                    const dot = document.createElement('div');
-                    dot.classList.add('pagination-dot');
-                    dot.addEventListener('click', () => {
-                        goToSlide(index);
-                    });
-                    pagination.appendChild(dot);
-                });
-                updateActiveDot();
-            }
-
-            function addEventListeners() {
-                sliderViewport.addEventListener('mousedown', dragStart);
-                sliderViewport.addEventListener('touchstart', dragStart, { passive: true });
-                sliderViewport.addEventListener('mouseup', dragEnd);
-                sliderViewport.addEventListener('mouseleave', dragEnd);
-                sliderViewport.addEventListener('touchend', dragEnd);
-                sliderViewport.addEventListener('mousemove', drag);
-                sliderViewport.addEventListener('touchmove', drag, { passive: true });
-                window.addEventListener('resize', onResize);
-            }
-            
-            function onResize() {
-                updateSlideWidth();
-                track.style.transition = 'none';
-                goToSlide(currentIndex);
-                setTimeout(() => {
-                    track.style.transition = 'transform 0.4s ease-out';
-                }, 50);
-            }
-
-            function dragStart(event) {
-                isDragging = true;
-                startPos = getPositionX(event);
-                sliderViewport.classList.add('grabbing');
-                track.style.transition = 'none';
-            }
-
-            function drag(event) {
-                if (isDragging) {
-                    const currentPosition = getPositionX(event);
-                    currentTranslate = prevTranslate + currentPosition - startPos;
-                    setSliderPosition();
-                }
-            }
-
-            function dragEnd() {
-                if (!isDragging) return;
-                isDragging = false;
-                const movedBy = currentTranslate - prevTranslate;
-                
-                if (movedBy < -50 && currentIndex < slides.length - 1) {
-                    currentIndex += 1;
-                }
-                if (movedBy > 50 && currentIndex > 0) {
-                    currentIndex -= 1;
-                }
-
-                track.style.transition = 'transform 0.4s ease-out';
-                goToSlide(currentIndex);
-                sliderViewport.classList.remove('grabbing');
-            }
-
-            function getPositionX(event) {
-                return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
-            }
-
-            function setSliderPosition() {
-                track.style.transform = `translateX(${currentTranslate}px)`;
-            }
-            
-            function goToSlide(index) {
-                currentTranslate = index * -slideWidth;
-                prevTranslate = currentTranslate;
-                currentIndex = index;
-                setSliderPosition();
-                updateActiveDot();
-            }
-            
-            function updateActiveDot() {
-                const dots = pagination.children;
-                Array.from(dots).forEach((dot, index) => {
-                    dot.classList.toggle('active', index === currentIndex);
-                });
-            }
-
-            initializeSlider();
-        });
-    </script>
+    <script src="scripts.js"></script>
 
 </body>
 </html>
