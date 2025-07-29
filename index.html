@@ -276,6 +276,26 @@
                 gap: 50px;
             }
         }
+        /* 1. Estado base: Definimos la transición para que el efecto sea suave */
+.comparison-box,
+.example-card,
+.feature-item,
+.partner-benefit {
+    /* Duración y tipo de animación para el movimiento y la sombra */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* 2. Estado hover: Lo que ocurre al pasar el ratón por encima */
+.comparison-box:hover,
+.example-card:hover,
+.feature-item:hover,
+.partner-benefit:hover {
+    /* Movimiento: La tarjeta se desplaza 8 píxeles hacia arriba */
+    transform: translateY(-8px);
+
+    /* Sombra: Hacemos la sombra más notoria para dar efecto de "flotación" */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
     </style>
 </head>
 <body>
