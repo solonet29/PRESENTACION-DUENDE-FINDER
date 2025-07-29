@@ -159,17 +159,17 @@
         .live-demo-section {
             background-color: #ffffff;
         }
-        .phone-mockup {
-    /* Volvemos a un color oscuro para mayor contraste */
+        phone-mockup {
     background: #18181b;
     border: 10px solid #18181b;
-    
-    /* El resto de propiedades se mantienen igual */
     border-radius: 40px;
     padding: 20px 10px 10px 10px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     position: relative;
-    max-width: 400px;
+    
+    /* Hacemos el móvil un poco más ancho */
+    max-width: 420px; 
+    
     margin: 0 auto;
 }
 
@@ -190,24 +190,18 @@
         .phone-screen {
     background: #fff;
     border-radius: 30px;
-    overflow: hidden;
+    overflow: hidden; /* Mantenemos esto para recortar las esquinas */
     aspect-ratio: 9 / 19.5;
-    height: 700px;
-
-    /* Añadimos Flexbox para poder centrar el contenido */
-    display: flex;
-    justify-content: center;
+    height: 750px; /* Le damos un poco más de altura */
+    /* Ya no necesitamos display:flex aquí */
 }
         
-.phone-screen iframe {
-    width: 414px; 
-    height: calc(100% / 0.91); 
-    transform: scale(0.91);
-
-    /* Cambiamos el origen para que se centre horizontalmente */
-    transform-origin: top center;
-
+phone-screen iframe {
+    /* Simplificamos al máximo: el iframe ocupa el 100% de la pantalla */
+    width: 100%; 
+    height: 100%; 
     border: none;
+    /* Eliminamos todas las propiedades de transform y transform-origin */
 }
         
         .ai-examples-section {
