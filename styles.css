@@ -287,7 +287,7 @@ footer a:hover {
 .competitor-table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 600px;
+    min-width: 600px; /* Esto asegura que la tabla no sea demasiado estrecha en escritorio */
 }
 .competitor-table th, .competitor-table td {
     padding: 15px;
@@ -471,7 +471,7 @@ footer a:hover {
         display: inline-block;
     }
     
-    /* --- CORRECCIÓN DEFINITIVA PARA LA TABLA EN MÓVILES --- */
+    /* --- CORRECCIONES PARA "FOCO 100%", "AGENDA CENTRALIZADA", ETC. --- */
     .competitor-table thead {
         display: none;
     }
@@ -493,42 +493,53 @@ footer a:hover {
     .competitor-table td {
         padding: 12px 15px;
         border-bottom: 1px solid #eee;
-        /* --- CAMBIOS APLICADOS AQUÍ --- */
-        display: flex; /* Convierte la celda en un contenedor flex */
-        justify-content: space-between; /* Distribuye el espacio entre los elementos */
-        align-items: center; /* Centra verticalmente los elementos */
+        display: flex; 
+        align-items: center;
+        /* Esto mantiene el icono a la derecha, mientras el texto está a la izquierda */
+        justify-content: space-between; 
+        /* Asegura que el contenido pueda envolverse si es necesario en la celda flex */
+        flex-wrap: wrap; 
     }
     .competitor-table td:first-child {
         background-color: #f4f4f5;
         font-weight: bold;
         font-size: 1.1rem;
-        text-align: center;
+        text-align: left; /* Alinea el "encabezado de tarjeta" a la izquierda */
         border-bottom: 1px solid #e0e0e0;
-        /* --- Volvemos a 'block' para que ocupe el ancho completo --- */
-        display: block;
+        display: block; 
+        white-space: normal; 
+        overflow-wrap: break-word; 
+        word-break: break-word; 
+        padding-left: 15px; 
+        padding-right: 15px;
     }
     .competitor-table tr td:last-of-type {
         border-bottom: none;
     }
     .competitor-table td:not(:first-child) {
-        text-align: left;
+        text-align: left; 
+        /* Aquí ya no necesitamos flex-wrap: nowrap, ya que el TD padre lo maneja */
     }
     .competitor-table td:not(:first-child)::before {
         content: attr(data-label);
         font-weight: normal;
         color: #52525b;
-        margin-right: 1em;
+        margin-right: 1em; /* Un poco de espacio entre el texto y el ícono */
         vertical-align: middle;
-        flex-shrink: 0; /* Evita que el texto de la etiqueta se encoja */
+        flex-grow: 1; /* PERMITE que la etiqueta ocupe todo el espacio disponible */
+        flex-shrink: 1; /* PERMITE que la etiqueta se encoja si no hay espacio */
+        white-space: normal; /* PERMITE que el texto de la etiqueta se envuelva */
+        overflow-wrap: break-word; /* Rompe palabras largas si no caben */
+        word-break: break-word; /* Otra propiedad para forzar el quiebre de palabras */
+        min-width: 0; /* Necesario para que flex-shrink y overflow-wrap funcionen correctamente en flex items */
     }
     .competitor-table td:not(:first-child) i {
         vertical-align: middle;
-        margin-left: 10px; /* Espacio entre el texto de la etiqueta y el icono */
-        /* --- Se elimina el 'float: right' para que se quede junto al texto --- */
+        margin-left: 10px; /* Margen para separar el ícono del texto si el texto se envuelve */
+        flex-shrink: 0; /* Asegura que el ícono NO se encoja */
     }
     .competitor-table td.nuestro-producto::before {
         font-weight: bold;
         color: #16a34a;
     }
 }
-
