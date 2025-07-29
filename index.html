@@ -190,10 +190,11 @@
         .phone-screen {
     background: #fff;
     border-radius: 30px;
-    overflow: hidden; /* Mantenemos esto para recortar las esquinas */
-    aspect-ratio: 9 / 19.5;
-    height: 750px; /* Le damos un poco más de altura */
-    /* Ya no necesitamos display:flex aquí */
+    overflow: hidden;
+    
+    /* Mantenemos la altura fija, que ahora será la única referencia.
+       La línea conflictiva 'aspect-ratio' ha sido eliminada. */
+    height: 750px;
 }
         
 phone-screen iframe {
